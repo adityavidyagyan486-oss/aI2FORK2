@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartCake Intelligence | PS2 By-product Protein Engine</title>
+<style>
+:root{--bg:#f4f7fb;--panel:#fff;--ink:#182230;--muted:#687586;--line:#e3e9f0;--green:#147d64;--green2:#e7f5ef;--blue:#2458a6;--blue2:#eaf1ff;--amber:#a65c08;--amber2:#fff3df;--red:#b33a3a;--red2:#fff0ef;--shadow:0 8px 28px rgba(31,48,73,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:14px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer}
+.app{display:grid;grid-template-columns:245px 1fr;min-height:100vh}.side{background:#142b2a;color:#eaf5f1;padding:24px 16px;position:sticky;top:0;height:100vh}.brand{display:flex;gap:10px;align-items:center;padding:0 8px 26px;border-bottom:1px solid #31504c}.logo{background:#b8f0d7;color:#123f35;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-weight:900;font-size:18px}.brand b{font-size:16px;display:block}.brand small{color:#a9c6be}.navlabel{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#91b2a8;margin:24px 10px 8px}.nav button{display:flex;width:100%;gap:11px;align-items:center;border:0;background:transparent;color:#c7ddd6;text-align:left;padding:11px 12px;border-radius:9px;margin:3px 0}.nav button.active,.nav button:hover{background:#28504a;color:#fff}.nav .ico{width:20px;text-align:center}.sidefoot{position:absolute;bottom:18px;left:22px;right:22px;color:#9fbab2;font-size:11px}.main{min-width:0}.topbar{background:#fff;border-bottom:1px solid var(--line);padding:17px 30px;display:flex;align-items:center;justify-content:space-between;gap:14px}.crumb{color:var(--muted);font-size:12px}.topbar strong{display:block;font-size:15px}.pill{display:inline-flex;align-items:center;gap:6px;border-radius:99px;padding:5px 10px;font-size:11px;font-weight:700;background:var(--green2);color:var(--green)}.pill.demo{background:var(--amber2);color:var(--amber)}.content{max-width:1450px;margin:auto;padding:28px 30px 50px}.heading{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:22px}.heading h1{font-size:27px;letter-spacing:-.6px;margin:0 0 5px}.heading p{margin:0;color:var(--muted);max-width:760px}.actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:1px solid var(--line);background:white;padding:9px 13px;border-radius:9px;font-weight:650;color:#344256}.btn.primary{background:var(--green);color:#fff;border-color:var(--green)}.btn:hover{filter:brightness(.97)}.grid{display:grid;gap:16px}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:19px;box-shadow:var(--shadow);min-width:0}.card h2{font-size:15px;margin:0 0 5px}.card h3{font-size:13px;margin:0 0 12px}.sub{color:var(--muted);font-size:12px}.metric{font-size:27px;font-weight:800;letter-spacing:-.7px;margin:10px 0 2px}.metric small{font-size:12px;font-weight:600;letter-spacing:0;color:var(--muted)}.metric-label{font-size:12px;color:var(--muted)}.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:25px 0 12px}.sectionhead h2{font-size:17px;margin:0}.sectionhead span{font-size:11px;color:var(--muted)}.formrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}.field label{display:block;font-size:11px;color:var(--muted);font-weight:700;margin-bottom:5px}.field select,.field input{width:100%;padding:10px 11px;border:1px solid #d7e0e9;border-radius:9px;background:#fff;color:var(--ink);outline:none}.field select:focus,.field input:focus{border-color:#5aa890;box-shadow:0 0 0 3px #e2f4ed}.tag{font-size:10px;font-weight:800;border-radius:5px;padding:3px 6px;display:inline-block}.high{background:var(--red2);color:var(--red)}.med{background:var(--amber2);color:var(--amber)}.low{background:var(--green2);color:var(--green)}.info{background:var(--blue2);color:var(--blue)}.compound{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #edf1f5;gap:12px}.compound:last-child{border:0}.compound b{font-size:12px}.compound small{display:block;color:var(--muted);font-size:11px}.bar{height:7px;background:#edf1f5;border-radius:10px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;border-radius:10px;background:#d65e54}.bar i.medium{background:#e3a13c}.bar i.good{background:#2c9b7c}.treatment{border:1px solid var(--line);border-radius:11px;padding:13px;margin:10px 0}.treatmenttop{display:flex;justify-content:space-between;gap:10px}.treatment p{font-size:12px;color:var(--muted);margin:6px 0}.treatment .meta{font-size:11px;color:#526174;display:flex;gap:12px;flex-wrap:wrap}.recommend{border-left:4px solid var(--green);background:#f0faf6;padding:14px;border-radius:8px;margin-top:12px}.recommend b{display:block;margin-bottom:3px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:12px}th{text-align:left;color:var(--muted);font-weight:700;background:#f8fafc}th,td{padding:11px 10px;border-bottom:1px solid #e9eef3;white-space:nowrap}tr:last-child td{border-bottom:0}.positive{color:var(--green);font-weight:800}.negative{color:var(--red);font-weight:800}.sensory{display:grid;grid-template-columns:120px 1fr 42px;gap:8px;align-items:center;margin:13px 0;font-size:12px}.sensory .track{height:9px;background:#edf1f5;border-radius:8px;overflow:hidden}.sensory .track i{display:block;height:100%;background:#e0a044;border-radius:8px}.sensory .track.after i{background:#239777}.disclaimer{padding:12px 14px;border:1px solid #f0d7a8;background:#fff9ec;border-radius:10px;color:#7d5416;font-size:11px;margin-top:14px}.next{display:flex;gap:13px;align-items:flex-start}.nexticon{width:38px;height:38px;flex:0 0 38px;border-radius:11px;background:var(--blue2);display:grid;place-items:center;color:var(--blue);font-size:18px}.footer{margin-top:25px;text-align:center;color:#8290a0;font-size:11px}.hidden{display:none!important}.page{display:none}.page.active{display:block}.notice{font-size:12px;color:var(--muted);padding:12px 0}.statusdot{width:7px;height:7px;border-radius:50%;background:#d89a2b;display:inline-block}
+@media(max-width:1050px){.app{grid-template-columns:205px 1fr}.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}.content{padding:22px 18px}.topbar{padding:15px 18px}}
+@media(max-width:720px){.app{display:block}.side{height:auto;position:relative;padding:14px}.brand{padding-bottom:12px}.navlabel,.sidefoot{display:none}.nav{display:flex;overflow:auto;gap:4px;margin-top:12px}.nav button{white-space:nowrap;width:auto;padding:9px}.nav .ico{display:none}.g4,.g3,.g2,.formrow{grid-template-columns:1fr}.heading{display:block}.actions{margin-top:14px}.topbar{padding:12px 16px}.content{padding:18px 13px}.heading h1{font-size:23px}}
+.formrow.f5{grid-template-columns:repeat(5,minmax(0,1fr))}@media(max-width:720px){.formrow.f5{grid-template-columns:1fr}}
+
+/* ===== Evidence layer (additive) ===== */
+.ev{display:none!important}
+.ev{display:inline-block;font-size:9px;font-weight:800;letter-spacing:.3px;border-radius:5px;padding:2px 6px;margin-left:6px;vertical-align:middle;white-space:nowrap;text-transform:none}
+.ev-exp{background:#e7f5ef;color:#147d64}.ev-mod{background:#eaf1ff;color:#2458a6}.ev-usr{background:#fff3df;color:#a65c08}.ev-nr{background:#eef1f4;color:#5b6675}.ev-red{background:#fff0ef;color:#b33a3a}
+.cf{display:inline-block;font-size:10px;font-weight:800;border-radius:5px;padding:3px 7px;white-space:nowrap}
+.cf-high{background:#d9f2e8;color:#0d6b52}.cf-med{background:#fff3df;color:#a65c08}.cf-low{background:#ffe9e6;color:#b33a3a}.cf-trans{background:#efe9ff;color:#5b3fb0}.cf-model{background:#eaf1ff;color:#2458a6}
+.legendbar{background:#fff;border-bottom:1px solid var(--line);padding:9px 30px;display:flex;gap:12px;flex-wrap:wrap;font-size:11px;align-items:center;color:var(--muted)}
+.flow{display:flex;gap:6px;flex-wrap:wrap;align-items:stretch;margin-top:12px}.flow .st{flex:1;min-width:130px;border:1px solid var(--line);border-radius:10px;padding:10px;background:#fbfcfe;font-size:11px}.flow .st b{display:block;font-size:12px;margin-bottom:2px}.flow .ar{align-self:center;color:#9aa8b8;font-weight:800}
+.strike{text-decoration:line-through;color:#8a95a3}
+.evtable td,.evtable th{white-space:normal;vertical-align:top}.evtable td.nw,.evtable th.nw{white-space:nowrap}
+.evtable a{color:var(--blue);text-decoration:none}.evtable a:hover{text-decoration:underline}
+.kv{display:grid;grid-template-columns:200px 1fr;gap:6px 12px;font-size:12px;margin:8px 0}.kv span:nth-child(odd){color:var(--muted);font-weight:700}
+.warnbox{border-left:4px solid var(--red);background:var(--red2);padding:12px 14px;border-radius:8px;margin-top:12px;font-size:12px}
+.okbox{border-left:4px solid var(--green);background:#f0faf6;padding:12px 14px;border-radius:8px;margin-top:12px;font-size:12px}
+.pa input{width:90px;padding:6px 7px;border:1px solid #d7e0e9;border-radius:8px}
+@media(max-width:720px){.legendbar{padding:9px 14px}.kv{grid-template-columns:1fr}}
+.ev-scn{background:#fff0ef;color:#b33a3a;border:1px solid #e6b3b0;white-space:normal;line-height:1.3;margin-left:0;margin-top:4px;display:inline-block}
+.mlbanner{background:#eaf1ff;border-bottom:1px solid #c9d9f5;padding:9px 30px;font-size:12px;color:#1d3f78}
+.ev-tail{margin-left:0}.tailrow{margin-top:6px}
+@media(max-width:720px){.mlbanner{padding:9px 14px}}
+
+/* ===================== PRO UI LAYER ===================== */
+:root{--teal:#18a0a8;--purple:#7a5bd6;--ring:0 0 0 3px #e2f4ed}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-feature-settings:'cv11','ss01';-webkit-font-smoothing:antialiased;
+ background:radial-gradient(1100px 520px at 88% -8%,#dff3ea 0%,transparent 62%),radial-gradient(900px 520px at -6% 8%,#e4eeff 0%,transparent 58%),var(--bg);background-attachment:fixed}
+::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-thumb{background:#c9d5e1;border-radius:10px;border:2px solid transparent;background-clip:content-box}::-webkit-scrollbar-track{background:transparent}
+.side{background:linear-gradient(185deg,#0d2220 0%,#133a35 55%,#18463f 100%);box-shadow:4px 0 30px rgba(10,30,28,.18)}
+.logo{background:linear-gradient(135deg,#c8f7e2,#7fe3b8);box-shadow:0 6px 16px rgba(127,227,184,.35)}
+.nav button{transition:background .2s,color .2s,transform .2s;font-weight:600;font-size:13px}
+.nav button:hover{transform:translateX(2px)}
+.nav button.active{background:linear-gradient(90deg,rgba(127,227,184,.22),rgba(127,227,184,.06));box-shadow:inset 3px 0 0 #7fe3b8;color:#fff}
+.nav .ico{color:#7fe3b8}
+.topbar{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.82);backdrop-filter:saturate(1.5) blur(12px);-webkit-backdrop-filter:saturate(1.5) blur(12px)}
+.legendbar{background:rgba(255,255,255,.7)}
+.mlbanner{background:linear-gradient(90deg,#eaf1ff,#eefaf5);border-bottom:1px solid #d3e3f3}
+.heading h1{background:linear-gradient(120deg,#122b3d 20%,#147d64 120%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.card{border-radius:16px;border-color:#e1e8f0}
+.btn{transition:all .18s;border-radius:10px}.btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(31,48,73,.1);filter:none}
+.btn.primary{background:linear-gradient(135deg,#17917a,#0f6b56);box-shadow:0 6px 16px rgba(20,125,100,.28)}
+.field select:hover,.field input:hover{border-color:#b9cad8}
+table tbody tr{transition:background .15s}table tbody tr:hover{background:#f7fafc}
+.page.active{animation:pageIn .42s cubic-bezier(.2,.7,.2,1)}
+.sectionhead h2{position:relative;padding-left:12px}.sectionhead h2:before{content:"";position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:4px;background:linear-gradient(180deg,#2c9b7c,#2458a6)}
+
+/* hero */
+#page-home>.card:first-child{position:relative;overflow:hidden;background:linear-gradient(135deg,#0b2523 0%,#14473d 50%,#1d6a58 100%)!important;box-shadow:0 22px 50px rgba(15,60,50,.28);padding:52px 44px!important}
+#page-home>.card:first-child:before{content:"";position:absolute;right:-120px;top:-140px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(127,227,184,.35),transparent 65%)}
+#page-home>.card:first-child:after{content:"";position:absolute;right:30px;top:20px;bottom:20px;width:46%;opacity:.55;pointer-events:none;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 300'%3E%3Cg stroke='%237fe3b8' stroke-opacity='.45' fill='none' stroke-width='1.4'%3E%3Cpath d='M60 210 L130 150 L210 170 L290 100 L370 130'/%3E%3Cpath d='M130 150 L150 70 L240 50 L290 100'/%3E%3Cpath d='M210 170 L230 250 L330 230 L370 130'/%3E%3C/g%3E%3Cg fill='%23b8f0d7'%3E%3Ccircle cx='60' cy='210' r='6'/%3E%3Ccircle cx='130' cy='150' r='9'/%3E%3Ccircle cx='210' cy='170' r='7'/%3E%3Ccircle cx='290' cy='100' r='11'/%3E%3Ccircle cx='370' cy='130' r='6'/%3E%3Ccircle cx='150' cy='70' r='5'/%3E%3Ccircle cx='240' cy='50' r='8'/%3E%3Ccircle cx='230' cy='250' r='6'/%3E%3Ccircle cx='330' cy='230' r='8'/%3E%3C/g%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right center;background-size:contain}
+#page-home>.card:first-child>*{position:relative;z-index:1}
+#page-home>.card:first-child h1{font-size:44px!important;line-height:1.08;background:linear-gradient(120deg,#ffffff 30%,#9ff0cb);-webkit-background-clip:text;background-clip:text;color:transparent}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 22px}.chips span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#d9f3ea;border-radius:99px;padding:6px 13px;font-size:12px;font-weight:600;backdrop-filter:blur(4px)}
+.chips b{color:#b8f0d7;margin-right:4px}
+
+/* dashboard */
+.eyebrow{font-size:10px;letter-spacing:1.6px;text-transform:uppercase;font-weight:800;color:var(--green)}
+.hx-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin:30px 0 14px}.hx-head h2{font-size:22px;margin:3px 0 2px;letter-spacing:-.4px}.hx-head .sub{margin:0}
+.hx-sel{min-width:240px}
+.kpi{display:flex;gap:14px;align-items:center;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+.kpi:hover,.chartcard:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(31,48,73,.12)}
+.chartcard{transition:transform .22s,box-shadow .22s}
+.kpi-ic{width:46px;height:46px;flex:0 0 46px;border-radius:14px;display:grid;place-items:center;font-size:21px;font-weight:800}
+.kpi-v{font-size:25px;font-weight:800;letter-spacing:-.6px;line-height:1.15;margin:2px 0}.kpi-s{font-size:11px;color:var(--muted)}
+.ch-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:10px}.ch-head h2{font-size:15px;margin:0 0 2px}.ch-head .sub{margin:0}
+.ch-tag{font-size:10px;font-weight:800;color:var(--blue);background:var(--blue2);padding:4px 9px;border-radius:99px;white-space:nowrap}.ch-tag.g{color:var(--green);background:var(--green2)}.ch-tag.a{color:var(--amber);background:var(--amber2)}.ch-tag.p{color:#5b3fb0;background:#efe9ff}
+.ch-foot{font-size:11px;color:var(--muted);margin:10px 0 0}
+.chart{width:100%;height:auto;display:block;overflow:visible}
+.ring{width:100%;max-width:190px;display:block;margin:0 auto;overflow:visible}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:11px;color:var(--muted);margin-top:10px}.legend i{width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:5px;vertical-align:-1px}
+.span2{grid-column:span 2}
+.hb-row{display:grid;grid-template-columns:132px 1fr 58px;gap:10px;align-items:center;margin:10px 0;font-size:12px}.hb-l{color:#3b4a5e;font-weight:600}.hb-t{height:10px;background:#edf1f5;border-radius:8px;overflow:hidden}.hb-t i{display:block;height:100%;border-radius:8px}.hb-v{text-align:right;font-variant-numeric:tabular-nums}
+.pt-t{position:relative}.pt-t i{position:absolute;left:0;top:0}
+.tn-row{display:grid;grid-template-columns:140px 1fr 92px;gap:10px;align-items:center;margin:11px 0;font-size:12px}.tn-t{position:relative;height:14px;background:#f1f4f8;border-radius:8px}.tn-t>i{position:absolute;top:0;bottom:0;opacity:.9}.tn-c{position:absolute;top:-4px;bottom:-4px;width:2px;background:#182230;border-radius:2px}
+.st-row{margin:12px 0}.st-top{display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px}.st-bar{display:flex;height:24px;border-radius:8px;overflow:hidden;gap:2px;transition:width .6s}.st-bar i{display:block;min-width:2px}
+.callout{border-radius:10px;padding:10px 13px;font-size:12px;margin-top:12px;border-left:4px solid var(--green);background:#f0faf6}.callout.warn{border-color:var(--red);background:var(--red2)}
+.chip-row{display:grid;grid-template-columns:12px 1fr auto;gap:8px;align-items:center;font-size:11.5px;padding:6px 0;border-bottom:1px dashed #e8eef4}.chip-row:last-child{border:0}.dot{width:9px;height:9px;border-radius:50%}.d-ok{background:var(--green2);box-shadow:0 0 0 2px #2c9b7c}.d-no{background:var(--red);box-shadow:0 0 0 2px #f1b6b2}.d-pend{background:#e3a13c;box-shadow:0 0 0 2px #f6dcaa}
+.minirow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.mini{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center}.mini b{display:block;font-size:19px;letter-spacing:-.4px}.mini span{font-size:10.5px;color:var(--muted)}
+.tierbadge{display:inline-block;font-weight:800;font-size:12px;border-radius:99px;padding:5px 12px;margin:8px auto 0}
+#sc-tip{position:fixed;display:none;z-index:9999;background:#182230;color:#fff;font-size:11px;font-weight:600;padding:6px 10px;border-radius:8px;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.3);max-width:280px;line-height:1.4}
+
+@keyframes pageIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes growx{from{width:0}}
+@keyframes growy{from{transform:scaleY(0)}}
+@keyframes ringin{from{stroke-dasharray:0 400}}
+@keyframes fadein{from{opacity:0}}
+.anim .hb-t i,.anim .tn-t>i{animation:growx .85s cubic-bezier(.2,.7,.2,1) both}
+.anim .st-bar{animation:growx .8s cubic-bezier(.2,.7,.2,1) both}
+.anim .vb{transform-box:fill-box;transform-origin:bottom;animation:growy .75s cubic-bezier(.2,.7,.2,1) both}
+.anim .ringfill{animation:ringin 1.1s ease both}
+.anim .rad,.anim .lpath{animation:fadein .9s ease both}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media(max-width:720px){.span2{grid-column:auto}.hb-row{grid-template-columns:96px 1fr 50px}.tn-row{grid-template-columns:100px 1fr 70px}#page-home>.card:first-child{padding:30px 20px!important}#page-home>.card:first-child h1{font-size:30px!important}#page-home>.card:first-child:after{opacity:.2;width:80%}.hx-sel{min-width:100%}}
+@media print{.side,.topbar,.legendbar,.mlbanner,.actions{display:none!important}.app{display:block}.card{box-shadow:none;break-inside:avoid}}
+
+:focus-visible{outline:2px solid #2c9b7c;outline-offset:2px;border-radius:6px}
+.nav button:focus-visible{outline-color:#7fe3b8}
+.chartcard .chart text{font-family:inherit}
+
+</style>
+<meta name="description" content="SmartCake Intelligence: evidence-guided engine that turns food by-products into protein ingredients."><meta name="theme-color" content="#142b2a"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Crect width=%2764%27 height=%2764%27 rx=%2716%27 fill=%27%23147d64%27/%3E%3Ctext x=%2732%27 y=%2745%27 font-size=%2738%27 font-weight=%27900%27 text-anchor=%27middle%27 fill=%27white%27 font-family=%27Arial%27%3ES%3C/text%3E%3C/svg%3E"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<noscript><div style="padding:24px;font:16px sans-serif">SmartCake Intelligence needs JavaScript enabled.</div></noscript>
+<div class="app">
+<aside class="side">
+  <div class="brand"><div class="logo">S</div><div><b>SmartCake</b><small>By-product Intelligence</small></div></div>
+  <div class="navlabel">PS2 workspace</div>
+  <nav class="nav">
+    <button class="active" data-page="home"><span class="ico">⌂</span>Home</button>
+    <button data-page="analysis"><span class="ico">◉</span>By-product analysis</button>
+    <button data-page="evidence"><span class="ico">✔</span>Evidence database</button>
+    <button data-page="treatment"><span class="ico">⚗</span>Treatment engine</button>
+    <button data-page="compare"><span class="ico">⇄</span>Prediction & economics</button>
+    <button data-page="formula"><span class="ico">∑</span>Formula calculator</button>
+    <button data-page="overview"><span class="ico">◈</span>Decision dashboard</button>
+    <button data-page="experiment"><span class="ico">⌁</span>Next experiment</button>
+  </nav>
+  <div class="sidefoot">PS2 · Upcycling food by-products<br>Prototype · Evidence-aware demo</div>
+</aside>
+<main class="main">
+<header class="topbar"><div><div class="crumb">SmartCake Intelligence / <span id="crumb">Home</span></div><strong>Alternative Protein · Evidence-Guided Intelligence Engine</strong></div><div class="actions"><span class="pill demo"><span class="statusdot"></span> Demo estimates</span><span class="pill">● Traceable workflow</span></div></header>
+<div class="legendbar"><b style="color:var(--ink)">Evidence labels:</b><span><span class="ev ev-exp" style="margin:0">🟢 EXPERIMENTAL</span> reported by a paper</span><span><span class="ev ev-mod" style="margin:0">🔵 MODEL PREDICTION</span> calculated by the model / assumption</span><span><span class="ev ev-usr" style="margin:0">🟠 USER INPUT</span> entered by you</span><span><span class="ev ev-nr" style="margin:0">⚪ NR</span> not reported</span></div>
+<div class="mlbanner"><b>Evidence-Guided Intelligence Engine.</b> Current version uses literature evidence + rule-based reasoning. ML will be trained after sufficient validated experimental data is collected.</div>
+<div class="content">
+<section class="page active" id="page-home">
+  <div class="card" style="padding:44px 38px;background:linear-gradient(135deg,#142b2a,#1f4a43);color:#eaf5f1;border:0">
+    <span class="pill" style="background:#b8f0d7;color:#123f35">PS2 · Upcycling food by-products</span>
+    <h1 style="font-size:36px;letter-spacing:-1px;margin:16px 0 10px;max-width:720px">Turn food by-products into protein ingredients</h1>
+    <p style="max-width:640px;color:#c7ddd6;font-size:15px;margin:0 0 24px">Diagnose limiting compounds, choose a treatment pathway, estimate protein and sensory outcomes, and compare processing economics with a reference protein isolate.</p>
+    <div style="background:#ffffff14;border:1px solid #ffffff33;border-radius:12px;padding:12px 16px;max-width:640px;margin:0 0 24px"><b style="font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:#b8f0d7">Industry question</b><div style="margin-top:4px">Can this by-product become a viable human-food protein ingredient, and what is the cheapest treatment that makes it acceptable?</div></div>
+    <div class="actions"><button class="btn primary" style="padding:12px 22px;font-size:15px" onclick="showPage('analysis')">Start analysis →</button><button class="btn" onclick="showPage('overview')">View decision dashboard</button></div>
+  </div>
+  <div class="sectionhead"><h2>How it works</h2><span>Three steps from feedstock to decision</span></div>
+  <div class="grid g3">
+    <div class="card"><h2>01 · Diagnose</h2><p class="sub">Review composition and identify phytate, phenolics, tannins and other barriers.</p></div>
+    <div class="card"><h2>02 · Treat & estimate (scenario)</h2><p class="sub">Match a treatment to a specific barrier and estimate protein retention, sensory outcome and cost.</p></div>
+    <div class="card"><h2>03 · Validate</h2><p class="sub">Use predictions to pick the next experiment, then replace estimates with lab results.</p></div>
+  </div>
+  <div class="disclaimer">Prototype with demo estimates. The Evidence-Guided Intelligence Engine currently uses literature evidence + rule-based reasoning (an evidence-weighted, multi-objective ranking layer). No ML model has been trained; ML will be trained after sufficient validated experimental data is collected. Replace demo values with measured lab values before making real decisions.</div>
+</section>
+<section class="page" id="page-overview">
+  <div class="heading"><div><h1>Turn food by-products into protein ingredients</h1><p>Identify limiting compounds, choose a treatment pathway, estimate protein and sensory outcomes, and compare processing economics with a reference protein isolate.</p></div></div>
+  <div class="recommend" style="border-left-color:var(--blue);background:var(--blue2);margin:0 0 16px"><b>Industry question</b><span class="sub">Can this by-product become a viable human-food protein ingredient, and what is the cheapest treatment that makes it acceptable?</span></div>
+  <div class="card" style="padding:24px;margin-bottom:16px">
+    <div class="sub" style="letter-spacing:1.5px;text-transform:uppercase;font-weight:700;font-size:10px">Evidence-Guided Decision</div>
+    <div style="display:flex;gap:22px;flex-wrap:wrap;align-items:center;margin:8px 0 18px"><div style="flex:1;min-width:260px"><div id="decTier" style="font-size:32px;font-weight:900;letter-spacing:-1px">—</div><div class="sub" id="decTierText" style="font-size:13px;margin-top:2px"></div></div><div style="text-align:right;display:none"><div class="metric" id="feasScore" style="font-size:44px;margin:0">—</div><div class="metric-label">SmartCake score / 100</div></div></div>
+    <div class="grid g4" id="decFacts"></div>
+    <div class="grid g2" style="margin-top:16px"><div><h3>Critical constraints</h3><div id="decCons"></div></div><div class="recommend" style="margin-top:0"><b>Most valuable next measurement</b><span class="sub" id="feasNext"></span></div></div>
+  </div>
+  <div class="card" id="evDecisionCard" style="display:none;padding:22px;margin-bottom:16px;border-top:4px solid var(--blue)">
+    <div class="sub" style="letter-spacing:1.5px;text-transform:uppercase;font-weight:700;font-size:10px">Evidence-aware decision <span class="ev ev-mod">uses evidence tier, not a score</span></div>
+    <div id="evDecision" style="margin-top:8px"></div>
+  </div>
+  <div class="grid g4">
+    <div class="card"><div class="metric-label">Selected feedstock</div><div class="metric" id="kpi-feedstock" style="font-size:21px">Sesame press-cake</div><div class="sub">Locally available side-stream</div></div>
+    <div class="card"><div class="metric-label">Primary bottleneck</div><div class="metric" id="kpi-bottleneck" style="font-size:21px;color:var(--red)">Total phenolics</div><div class="sub" id="kpi-bottleneck-sub">Highest limitation score</div></div>
+    <div class="card"><div class="metric-label">Modelled ingredient protein</div><div class="metric"><span id="kpi-protein">42</span><small>%</small></div><div class="sub"><span class="ev ev-scn">MODELLED SCENARIO — NOT A LITERATURE VALUE</span></div></div>
+    <div class="card"><div class="metric-label">Estimated cost per kg protein</div><div class="metric">₹<span id="kpi-cost">42</span><small>/kg protein</small></div><div class="sub">Editable planning assumptions</div></div>
+  </div>
+  <div class="sectionhead"><h2>Why this score</h2><span>Weighted components and decision sensitivity</span></div>
+  <div class="grid g2">
+    <div class="card"><h2>Score breakdown</h2><p class="sub">Each component is scored 0–100, then weighted. Safety is also a hard gate: the decision cannot be GO until it is passed, and a failure means REJECT regardless of score.</p><div id="feasBreakdown"></div>
+      <div class="field" style="margin-top:14px"><label>SAFETY GATE (microbiology, allergens, contaminants)</label><select id="safetyStatus" onchange="updateAll()"><option value="none">Not assessed</option><option value="partial">Partially completed</option><option value="pass">Completed and passed</option><option value="fail">Failed</option></select></div>
+      <div class="disclaimer">Weights: compound reduction 20 · protein recovery 20 · cost 15 · sensory 15 · resources 10 · safety 15 · evidence 5. Outputs rely on illustrative assumptions until replaced with measured data.</div></div>
+    <div class="card"><h2>What would change my decision?</h2><p class="sub">Each input is varied ±20% and the SmartCake score and decision are recomputed. Ranked by influence.</p><div id="sensRows"></div></div>
+  </div>
+  <div class="sectionhead"><h2>PS2 workflow at a glance</h2><span>From diagnosis to a testable decision</span></div>
+  <div class="grid g3">
+    <div class="card"><h2>01 · Diagnose</h2><p class="sub">Review composition and potential anti-nutritional or sensory barriers.</p><div class="compound"><div><b>Limiting compounds</b><small>Phytate, phenolics, tannins, inhibitors</small></div><span class="tag high">Assess</span></div><div class="compound"><div><b>Data provenance</b><small>Measured / literature / assumed</small></div><span class="tag info">Visible</span></div><button class="btn" onclick="showPage('analysis')">Open analyzer →</button></div>
+    <div class="card"><h2>02 · Treat & estimate (scenario)</h2><p class="sub">Match a treatment to a specific barrier and consider protein retention, functionality and cost.</p><div class="compound"><div><b>Compound-targeted</b><small>Wash · enzyme · fermentation · ultrasound</small></div><span class="tag low">Ranked</span></div><div class="compound"><div><b>Multi-objective</b><small>Protein + sensory + economics</small></div><span class="tag info">Compare</span></div><button class="btn" onclick="showPage('treatment')">Open treatment engine →</button></div>
+    <div class="card"><h2>03 · Validate</h2><p class="sub">Use predictions to choose the next measurement, then replace estimates with lab results.</p><div class="compound"><div><b>Next best experiment</b><small>Measure the biggest uncertainty first</small></div><span class="tag med">Proposed</span></div><div class="compound"><div><b>Reference benchmark</b><small>Imported pea isolate</small></div><span class="tag info">Compare</span></div><button class="btn" onclick="showPage('experiment')">Plan validation →</button></div>
+  </div>
+  <div class="disclaimer"><b>Scientific integrity:</b> this standalone prototype uses illustrative demo values and rule-based recommendations. It does not contain a trained ML model, validated compound assay, trained sensory model, live market-price feed, or verified life-cycle inventory. Do not present these outputs as experimental findings.</div>
+</section>
+
+<section class="page" id="page-analysis">
+  <div class="heading"><div><h1>By-product analyzer</h1><p>Select a feedstock and inspect its composition and likely limiting factors. Replace demo inputs with measured or cited values before scientific use.</p></div><span class="pill">Step 1 · Characterize</span></div>
+  <div class="grid g2">
+    <div class="card"><h2>Feedstock & composition</h2><p class="sub">Editable planning values · wet/dry basis must be confirmed for real data.</p>
+      <div class="formrow" style="grid-template-columns:1fr 1fr">
+        <div class="field"><label>BY-PRODUCT</label><select id="feedstock" onchange="updateAll()"><option>Sesame press-cake</option><option>Groundnut cake</option><option>Rice bran</option><option>Guar meal</option><option>Pulse residue</option><option>Almond cake</option></select></div>
+        <div class="field"><label>DATA BASIS</label><select id="basis"><option>Illustrative demo</option><option>Measured lab data</option><option>Published literature</option><option>Assumption / estimate</option></select></div>
+      </div>
+      <div class="formrow">
+        <div class="field"><label>Raw protein (%)</label><input id="rawProtein" type="number" min="0" max="100" value="38" onchange="updateAll()"></div>
+        <div class="field"><label>Moisture (%)</label><input id="moisture" type="number" min="0" max="100" value="8" onchange="updateAll()"></div>
+        <div class="field"><label>Fibre (%)</label><input id="fibre" type="number" min="0" max="100" value="12" onchange="updateAll()"></div>
+      </div>
+      <div class="sectionhead"><h2>Limitation score inputs</h2><span class="tag med">Example values</span></div>
+      <p class="sub" style="margin:0 0 8px">Limitation score = concentration × impact factor × evidence confidence, shown out of 100. Concentration is scaled against a reference level (capped at 1). Reference level, impact and confidence are editable assumptions.</p>
+      <div class="tablewrap"><table><thead><tr><th>Compound</th><th>Concentration <span class="ev ev-usr">🟠 USER INPUT</span></th><th>Reference level <span class="ev ev-usr">🟠 USER INPUT</span></th><th>Impact (0–1) <span class="ev ev-usr">🟠 USER INPUT</span></th><th>Evidence confidence (0–1) <span class="ev ev-usr">🟠 USER INPUT</span></th></tr></thead><tbody id="lcRows"></tbody></table></div>
+      <div class="notice">Limitation scores are screening estimates, not measured observations. Replace the reference level, impact factor and evidence confidence with cited or assayed values. Relevance differs by feedstock, cultivar and processing history.</div>
+    </div>
+    <div class="card"><h2>Limiting-compound map</h2><p class="sub">Ranked by limitation score (concentration × impact factor × evidence confidence).</p>
+      <div id="compoundMap"></div>
+      <div class="recommend"><b id="diagnosisTitle">Priority: phenolics / tannins</b><span id="diagnosisText" class="sub">Consider a treatment that targets the measured barrier while tracking protein loss and water use.</span></div>
+      <div class="disclaimer">Do not infer that a compound is present at a high level without a validated assay or reliable source. Add assay method, units, source and date for every measured value.</div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:16px"><h2>Literature reference values · sesame press cake <span class="ev ev-exp">🟢 EXPERIMENTAL</span></h2><p class="sub">Published values shown beside the editable demo inputs above. Nothing is auto-filled; use the button only if you want the literature baseline as your starting point.</p>
+  <div class="grid g2" style="margin-top:10px"><div>
+    <h3>Dataset A · Sesame cake composition</h3>
+    <div class="tablewrap"><table class="evtable"><thead><tr><th>Parameter</th><th>Value</th><th>Evidence</th></tr></thead><tbody><tr><td>Protein</td><td><b>40.74 ± 0.02% DM</b></td><td><span class="ev ev-exp" style="margin:0">EXPERIMENTAL</span></td></tr><tr><td>Fat</td><td><b>12.78 ± 0.90% DM</b></td><td><span class="ev ev-exp" style="margin:0">EXPERIMENTAL</span></td></tr></tbody></table></div>
+    <p class="sub" style="margin-top:8px">Source: Li et al. (2023), <i>Industrial Crops and Products</i> · DOI <a href="https://doi.org/10.1016/j.indcrop.2023.117697" target="_blank" rel="noopener">10.1016/j.indcrop.2023.117697</a></p>
+    <p class="sub">Current raw-protein input: <b id="evRawNow">—</b> <span class="ev ev-usr">USER INPUT</span></p>
+    <button class="btn" onclick="evUseLitProtein()">Use literature protein (40.74% DM)</button> <span class="sub" id="evUseMsg"></span>
+  </div><div>
+    <h3>Antinutrient data · Fadimatou et al. (2024)</h3>
+    <div class="tablewrap"><table class="evtable"><thead><tr><th>Antinutrient</th><th>Reported range (mg/100 g DM) <span class="ev ev-exp">EXPERIMENTAL</span></th><th>Reported reduction after pretreatment <span class="ev ev-exp">EXPERIMENTAL</span></th></tr></thead><tbody>
+    <tr><td>Oxalates</td><td>0.48–1.04</td><td>64.64%</td></tr><tr><td>Phytates</td><td>0.08–0.12</td><td>83.33%</td></tr><tr><td>Saponins</td><td>0.084–1.10</td><td>60.95%</td></tr><tr><td>Tannins</td><td>0.33–1.36</td><td>40.07%</td></tr></tbody></table></div>
+    <p class="sub" style="margin-top:8px">DOI <a href="https://doi.org/10.9734/ajb2t/2024/v10i2205" target="_blank" rel="noopener">10.9734/ajb2t/2024/v10i2205</a> · <i>Asian J. Biotechnol. Bioresour. Technol.</i></p>
+  </div></div>
+  <div class="warnbox"><b>Not universal treatment efficiencies.</b> These reductions come from that paper's own pretreatment experiments. They are stored with their treatment/condition in the Evidence database and are <b>not</b> used as phytate/tannin/oxalate/saponin removal factors in the engine. Units here (mg/100 g DM) differ from the demo inputs above (mg/g, mg GAE/g…), so the two are not directly comparable; please also re-check the phytate range against the original paper's units before citing it.</div>
+</div>
+</section>
+
+<section class="page" id="page-treatment">
+  <div class="heading"><div><h1>Compound-to-treatment engine</h1><p>Recommendations connect each potential barrier to a plausible treatment, expected trade-offs and a validation measurement.</p></div><span class="pill">Step 2 · Select pathway</span></div>
+  <div class="grid g2">
+    <div class="card"><h2>Treatment ranking for this feedstock</h2><p class="sub">Dynamic ranking from limitation scores, treatment effectiveness, protein recovery, cost, resource use and time. Effectiveness values are illustrative assumptions, not validated data.</p>
+      <div class="recommend" id="recBanner"></div>
+      <div id="evRecTrace"></div>
+      <div class="tablewrap" style="margin-top:14px"><table><thead><tr><th>#</th><th>Treatment</th><th>Compound removal</th><th>Protein recovery</th><th>Cost ₹/kg</th><th>Selectivity</th><th>Fit score</th></tr></thead><tbody id="rankRows"></tbody></table></div>
+      <p class="sub" style="margin:8px 0 14px">Selectivity = severity-weighted compound removal × protein recovery (0–1): which treatment removes the problem while preserving protein. Fit score (0–100) also weights cost, resource use and time.</p>
+      <div class="field"><label>PRIMARY TREATMENT PATHWAY</label><select id="pathway" onchange="updateAll()"><option value="enzyme">Enzyme + controlled hydration</option><option value="wash">Washing / aqueous extraction</option><option value="ferment">Controlled fermentation</option><option value="ultrasound">Ultrasound-assisted processing</option><option value="combined">Combined staged treatment</option></select></div>
+      <button class="btn primary" style="margin-top:12px" onclick="updateAll()">Recalculate scenario</button> <button class="btn" style="margin-top:12px" onclick="applyRecommended()">Use recommended pathway</button>
+    </div>
+    <div class="card"><h2>Expected outcomes & trade-offs</h2><p class="sub">Scenario outputs are directional estimates, not validated model predictions.</p>
+      <div class="recommend" id="massCard" style="border-left-color:var(--blue);background:var(--blue2);margin:0 0 14px"></div>
+      <div class="grid g2">
+        <div><div class="metric" id="outProtein">42%</div><div class="metric-label">Modelled ingredient protein <span class="ev ev-scn">MODELLED SCENARIO — NOT A LITERATURE VALUE</span></div></div>
+        <div><div class="metric" id="outRecovery">88%</div><div class="metric-label">Protein recovery assumption</div></div>
+        <div><div class="metric" id="outWater">18 L/kg</div><div class="metric-label">Water use assumption</div></div>
+        <div><div class="metric" id="outEnergy">4.2 MJ/kg</div><div class="metric-label">Energy use assumption</div></div>
+        <div><div class="metric" id="outRemoval">—</div><div class="metric-label">Severity-weighted compound removal</div></div>
+        <div><div class="metric" id="outSel">—</div><div class="metric-label">Treatment selectivity (0–1)</div></div>
+        <div><div class="metric" id="outTime">—</div><div class="metric-label">Processing time</div></div>
+        <div><div class="metric" id="outTxCost">—</div><div class="metric-label">Treatment cost (₹/kg feedstock)</div></div>
+      </div>
+      <div class="sectionhead"><h2>Validation checklist</h2></div>
+      <div id="validationList"></div>
+      <div class="recommend"><b>Decision rule</b><span class="sub">Prefer the lowest-cost pathway that meets safety, protein-retention and sensory acceptance constraints—not simply the highest protein percentage.</span></div>
+      <div class="disclaimer">Protein concentration can rise because non-protein mass is removed; that does not automatically mean protein mass or recovery improved. Track both concentration and mass balance.</div>
+    </div>
+  </div>
+<div class="card" style="margin-top:16px"><h2>Why this treatment?</h2><p class="sub">Makes the Evidence-Guided Intelligence Engine explainable: the barrier, the treatment capability and the trade-offs behind the recommendation.</p>
+    <div class="grid g4" id="whyFacts" style="margin-top:10px"></div>
+    <div class="recommend" id="whyText"></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h2>Treatment comparison</h2><p class="sub">Best overall ≠ highest removal. The ranking trades off compound removal, protein retention, cost, resources and time.</p>
+    <div id="cmpChart" style="margin-top:8px"></div>
+    <div class="recommend" id="cmpNote"></div>
+  </div>
+  <div hidden id="optimizerHidden"><h2>Treatment parameter optimizer</h2><p class="sub">Illustrative response model: efficacy is scaled relative to reference conditions (500 U/kg, pH 5.5, 45 °C, 60 min, 1:5). Calibrate with your own experiments. <b id="optActive"></b></p>
+    <div class="formrow f5">
+      <div class="field"><label>Enzyme / starter dose (U/kg)</label><input id="opDose" type="number" min="0" value="500" onchange="updateAll()"></div>
+      <div class="field"><label>pH</label><input id="opPh" type="number" min="1" max="12" step="0.1" value="5.5" onchange="updateAll()"></div>
+      <div class="field"><label>Temperature (°C)</label><input id="opTemp" type="number" min="5" max="100" value="45" onchange="updateAll()"></div>
+      <div class="field"><label>Hold time (min)</label><input id="opTime" type="number" min="1" value="60" onchange="updateAll()"></div>
+      <div class="field"><label>Solid : liquid (1 : x)</label><input id="opSL" type="number" min="1" step="0.5" value="5" onchange="updateAll()"></div>
+    </div>
+    <div class="tablewrap" style="margin-top:14px"><table><thead><tr><th>Predicted for selected pathway</th><th>Value</th></tr></thead><tbody id="optOut"></tbody></table></div>
+    <div class="disclaimer">Bell-shaped response factors are generic placeholders, not enzyme- or organism-specific kinetics. Use the output to choose which parameters to test first.</div>
+  </div>
+<div class="card" style="margin-top:16px"><h2>Evidence-backed thermal region <span class="ev ev-exp">🟢 EXPERIMENTAL</span></h2><p class="sub">Malaviya et al. (2021) experimentally investigated thermal processing of sesame seed cake. DOI <a href="https://doi.org/10.1111/jfpp.15850" target="_blank" rel="noopener" style="color:var(--blue)">10.1111/jfpp.15850</a></p>
+  <div class="grid g3" style="margin-top:10px">
+    <div class="card" style="box-shadow:none"><div class="metric-label">Literature experimental range <span class="ev ev-exp">EXPERIMENTAL</span></div><div style="font-weight:800;font-size:16px;margin-top:6px">80–200 °C · 20–60 min</div></div>
+    <div class="card" style="box-shadow:none"><div class="metric-label">Reported optimum <span class="ev ev-exp">EXPERIMENTAL</span></div><div style="font-weight:800;font-size:16px;margin-top:6px">82.81 °C × 20 min</div><div class="sub">Minimising phytate and oxalate while maximising antioxidant / oil-yield responses with desirable colour</div></div>
+  </div>
+  <div class="okbox"><b>Literature optimum — not a universal optimum.</b> It applies to the studied sesame-cake responses and conditions. The engine's generic placeholder reference conditions (45 °C, 60 min) fall outside this experimental range.</div>
+</div>
+</section>
+
+<section class="page" id="page-compare">
+  <div class="heading"><div><h1>Prediction & economic comparison</h1><p>Compare the upcycled ingredient with imported pea protein isolate using editable cost and protein assumptions.</p></div><span class="pill">Step 3 · Compare</span></div>
+  <div class="grid g2">
+    <div class="card"><h2>Economics assumptions</h2><p class="sub">Replace with supplier quotes, utility rates and measured yields.</p>
+      <div class="formrow">
+        <div class="field"><label>Raw material (₹/kg feedstock)</label><input id="rawCost" type="number" value="12" min="0" onchange="updateAll()"></div>
+        <div class="field"><label>Processing cost (₹/kg feedstock)</label><input id="processCost" type="number" value="20" min="0" onchange="updateAll()"></div>
+        <div class="field"><label>Ingredient yield (%)</label><input id="yieldPct" type="number" value="76" min="1" max="100" onchange="updateAll()"></div>
+      </div>
+      <div class="formrow">
+        <div class="field"><label>Measured ingredient protein (%) · blank = modelled scenario</label><input id="targetProtein" type="number" placeholder="Use predicted" min="1" max="100" onchange="updateAll()"></div>
+        <div class="field"><label>Pea isolate price (₹/kg)</label><input id="peaCost" type="number" value="185" min="0" onchange="updateAll()"></div>
+        <div class="field"><label>Pea isolate protein (%)</label><input id="peaProtein" type="number" value="80" min="1" max="100" onchange="updateAll()"></div>
+      </div>
+      <div class="field" style="margin-top:12px"><label>Other treatment cost / overhead (₹/kg feedstock)</label><input id="extraCost" type="number" value="0" min="0" onchange="updateAll()"></div>
+      <div class="notice">Simplified cost = (raw material + processing + selected-pathway treatment cost + other cost) ÷ ingredient yield. The pathway treatment cost comes from the Treatment engine. Excludes capital, packaging, labour overhead, quality testing, rejects and distribution unless included in your assumptions.</div>
+    </div>
+    <div class="card"><h2>Cost per kg protein delivered</h2><p class="sub">Main economic metric: compares the two ingredients at equal protein delivered.</p>
+    <div class="grid g2" style="margin-top:8px">
+      <div><div class="metric" id="proteinAdjusted" style="font-size:38px;color:var(--green)">₹126</div><div class="metric-label">Upcycled ingredient · ₹/kg protein</div></div>
+      <div><div class="metric" id="peaCPPDisplay" style="font-size:38px">₹231</div><div class="metric-label">Imported pea isolate · ₹/kg protein</div></div>
+    </div>
+    <div class="recommend"><b id="cpDiff">—</b><span class="sub">Estimate only; depends on the editable cost, yield and protein assumptions.</span></div>
+    <div class="grid g2" style="margin-top:14px">
+      <div><div class="metric" id="upCost" style="font-size:20px">₹53</div><div class="metric-label">₹/kg upcycled ingredient</div></div>
+      <div><div class="metric" id="peaCostDisplay" style="font-size:20px">₹185</div><div class="metric-label">₹/kg pea isolate</div></div>
+    </div>
+    <div class="tablewrap" style="margin-top:18px"><table><thead><tr><th>Metric</th><th>Upcycled ingredient</th><th>Pea isolate</th></tr></thead><tbody>
+      <tr><td>Protein concentration <span id="tUpScn"><span class="ev ev-scn">MODELLED SCENARIO — NOT A LITERATURE VALUE</span></span></td><td id="tUpProtein">42%</td><td id="tPeaProtein">80%</td></tr>
+      <tr><td>Cost / kg ingredient</td><td id="tUpCost">₹53</td><td id="tPeaCost">₹185</td></tr>
+      <tr><td>Cost / kg protein</td><td id="tUpCP">₹126</td><td id="tPeaCP">₹231</td></tr>
+      <tr><td>Water use</td><td id="tWater">18 L/kg*</td><td>Not entered</td></tr>
+      <tr><td>Energy use</td><td id="tEnergy">4.2 MJ/kg*</td><td>Not entered</td></tr>
+      <tr><td>Processing time</td><td id="tTime">—</td><td>Not entered</td></tr>
+      <tr><td>Treatment cost</td><td id="tTxCost">—</td><td>Not entered</td></tr>
+    </tbody></table></div>
+    <div class="disclaimer">*Resource values are demo assumptions for the selected pathway. A fair comparison requires the same functional unit and system boundary (for example, per kg of protein delivered), plus sourced data for the pea isolate.</div></div>
+  </div>
+  <div class="sectionhead"><h2>Scenario sensory estimate</h2><span>Derived from compound-removal assumptions · requires blinded sensory validation</span></div>
+  <div class="card"><div class="grid g2"><div><h3>Before treatment</h3><div id="sensoryBefore"></div></div><div><h3>After selected treatment (scenario)</h3><div id="sensoryAfter"></div></div></div><div id="sensorySummary" class="grid g3" style="margin-top:14px"></div><div class="disclaimer">Derived from compound-removal assumptions, not from a trained sensory model or panel data. We use it to prioritise which treatment deserves sensory validation, not to claim a result. Replace with blinded sensory test results and uncertainty intervals.</div></div>
+</section>
+
+<section class="page" id="page-formula">
+  <div class="heading"><div><div class="sub" style="letter-spacing:1.5px;text-transform:uppercase;font-weight:700;font-size:10px;margin-bottom:6px">Scientific workbench</div><h1>Scientific Formula Calculator</h1><p>Live calculations with equations, units, validation and explicit assumptions.</p></div><div class="actions"><button class="btn" onclick="fcCopy(this)">Copy result</button><button class="btn" onclick="fcBuild()">Reset inputs</button></div></div>
+  <div class="recommend" style="border-left-color:var(--blue);background:var(--blue2);margin-top:0"><b>∑ Calculated values are not measured observations</b><span class="sub">Inputs are examples only where explicitly labelled. Replace them with traceable data. Results update when inputs change; no missing experimental value is silently filled.</span></div>
+  <div class="grid g2" style="margin-top:16px">
+    <div class="card"><h2>Choose calculation</h2><p class="sub">Eight scientific calculator groups</p><div class="field" style="margin-top:14px"><label>Calculation</label><select id="fcSelect" onchange="fcBuild()"></select></div><div id="fcInputs"></div></div>
+    <div class="card"><div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px"><div><h2>Calculation result <span class="ev ev-usr">🟠 USER INPUT · calculated</span></h2><p class="sub">Updates from current inputs</p></div><span class="tag info" id="fcTag">Calculated</span></div>
+      <div style="background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:12px 0"><div class="metric" id="fcResult">—</div><p class="sub" id="fcNote" style="margin:6px 0 0"></p></div>
+      <h3>Equation &amp; method</h3><div id="fcEq" style="background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:14px;font-size:12px"></div>
+      <h3 style="margin-top:18px">Calculation steps</h3><div id="fcSteps"></div>
+    </div>
+  </div>
+</section>
+<section class="page" id="page-experiment">
+  <div class="heading"><div><h1>Next best experiment</h1><p>Turn the Evidence-Guided Intelligence Engine recommendation into a measurable, controlled experiment. Record actual results to replace assumptions.</p></div><span class="pill">Step 4 · Validate</span></div>
+  <div class="grid g2">
+    <div class="card"><div class="next"><div class="nexticon">⌁</div><div><h2>Recommended first validation run</h2><p class="sub">A small screening trial with a matched untreated control.</p></div></div>
+      <div class="recommend" style="margin-top:16px"><b id="experimentTitle">Measure residual phenolics after the selected treatment</b><span class="sub" id="experimentReason">This validates whether the pathway addresses the suspected primary bottleneck without unacceptable protein loss.</span></div>
+      <div class="sectionhead"><h2>Suggested measurements</h2></div>
+      <div id="experimentChecks"></div>
+      <div class="field" style="margin-top:14px"><label>TRIAL NOTES / REAL RESULT</label><input id="trialNotes" placeholder="e.g. assay method, measured result, replicate count"></div>
+      <button class="btn primary" style="margin-top:12px" onclick="saveTrial()">Save trial note locally</button>
+      <p class="sub" id="saveMessage" aria-live="polite"></p>
+    </div>
+    <div class="card"><h2>Minimum experiment design</h2><div class="compound"><div><b>Control</b><small>Untreated feedstock, same sampling basis</small></div><span class="tag info">Required</span></div><div class="compound"><div><b>Treatment</b><small>One selected pathway with recorded parameters</small></div><span class="tag info">Required</span></div><div class="compound"><div><b>Replicates</b><small>At least 3 independent replicates where feasible</small></div><span class="tag med">Recommended</span></div><div class="compound"><div><b>Mass balance</b><small>Record input, output, moisture and solids loss</small></div><span class="tag low">Essential</span></div><div class="compound"><div><b>Safety checks</b><small>Relevant microbiology, allergens and contaminants</small></div><span class="tag high">Gate</span></div>
+      <div class="sectionhead"><h2>Decision gate</h2></div><p class="sub">Proceed to pilot only when compound reduction, protein recovery, sensory acceptance, safety and unit economics meet pre-defined thresholds. Otherwise revise the treatment or test another feedstock.</p>
+      <button class="btn" onclick="window.print()">Print experiment plan</button>
+    </div>
+  </div>
+  <div class="card" style="margin-top:16px;display:none"><h2>Predicted vs lab result</h2><p class="sub">Enter measured values to see how far the scenario prediction is from reality. Error = |lab − prediction| ÷ prediction.</p>
+    <div class="tablewrap"><table><thead><tr><th>Parameter</th><th>Prediction <span class="ev ev-mod">🔵 MODEL PREDICTION</span></th><th>Lab result <span class="ev ev-usr">🟠 USER INPUT</span></th><th>Error</th></tr></thead><tbody>
+      <tr><td>Total phenolics after treatment (mg GAE/g)</td><td id="pv2_phen_pred">—</td><td><input id="pv2_phen_lab" type="number" step="any" oninput="pvCalc()" style="width:100px;padding:6px 7px;border:1px solid #d7e0e9;border-radius:8px"></td><td id="pv2_phen_err">—</td></tr>
+      <tr><td>Ingredient protein (%)</td><td id="pv2_prot_pred">—</td><td><input id="pv2_prot_lab" type="number" step="any" oninput="pvCalc()" style="width:100px;padding:6px 7px;border:1px solid #d7e0e9;border-radius:8px"></td><td id="pv2_prot_err">—</td></tr>
+      <tr><td>Protein recovery (%)</td><td id="pv2_rec_pred">—</td><td><input id="pv2_rec_lab" type="number" step="any" oninput="pvCalc()" style="width:100px;padding:6px 7px;border:1px solid #d7e0e9;border-radius:8px"></td><td id="pv2_rec_err">—</td></tr>
+      <tr><td>Sensory acceptance (/10)</td><td id="pv2_sens_pred">—</td><td><input id="pv2_sens_lab" type="number" step="any" oninput="pvCalc()" style="width:100px;padding:6px 7px;border:1px solid #d7e0e9;border-radius:8px"></td><td id="pv2_sens_err">—</td></tr>
+    </tbody></table></div>
+    <div class="recommend"><b>Scenario error vs lab (MAPE)</b><span class="sub" id="mape">Enter lab results</span></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h2>Prediction vs Actual · compulsory validation <span class="ev ev-mod">predictions</span> <span class="ev ev-usr">actuals = USER INPUT from a lab</span></h2><p class="sub">Extends the table above. "Actual" is never pre-filled: it must come from an experiment. Error metrics are computed only for rows you complete.</p>
+    <div class="tablewrap pa"><table class="evtable"><thead><tr><th>Parameter</th><th class="nw">Predicted</th><th class="nw">Actual (lab)</th><th class="nw">Absolute error</th><th class="nw">Relative error</th><th class="nw">Signed error (bias)</th></tr></thead><tbody>
+      <tr><td>Protein recovery (%)</td><td id="pa_rec_pred">—</td><td><input id="pa_rec_act" type="number" step="any" oninput="evPost()"></td><td id="pa_rec_abs">—</td><td id="pa_rec_rel">—</td><td id="pa_rec_bias">—</td></tr>
+      <tr><td>Phytate reduction (%)</td><td id="pa_phy_pred">—</td><td><input id="pa_phy_act" type="number" step="any" oninput="evPost()"></td><td id="pa_phy_abs">—</td><td id="pa_phy_rel">—</td><td id="pa_phy_bias">—</td></tr>
+      <tr><td>Protein purity / ingredient protein (%)</td><td id="pa_pur_pred">—</td><td><input id="pa_pur_act" type="number" step="any" oninput="evPost()"></td><td id="pa_pur_abs">—</td><td id="pa_pur_rel">—</td><td id="pa_pur_bias">—</td></tr>
+    </tbody></table></div>
+    <div class="grid g3" style="margin-top:12px"><div class="card" style="box-shadow:none"><div class="metric-label">MAPE</div><div class="metric" id="pa_mape" style="font-size:22px">—</div></div><div class="card" style="box-shadow:none"><div class="metric-label">Mean bias (actual − predicted, % points)</div><div class="metric" id="pa_bias" style="font-size:22px">—</div></div><div class="card" style="box-shadow:none"><div class="metric-label">Rows with lab data</div><div class="metric" id="pa_n" style="font-size:22px">0 / 3</div></div></div>
+    <div class="recommend" style="margin-top:12px"><b>Scenario estimate → Experiment → Error → Evidence update</b><span class="sub" id="pa_update">No lab data entered: the decision cannot be upgraded beyond VALIDATE until at least one actual is recorded.</span></div>
+  </div>
+  <div class="card" style="margin-top:16px;border-top:4px solid var(--green)"><h2>NEXT BEST EXPERIMENT <span class="ev ev-exp">benchmarked to literature</span></h2><p class="sub">Final step of the workflow: the experiment with the strongest direct sesame evidence to reproduce and test against.</p>
+    <div class="grid g2" style="margin-top:12px"><div>
+      <div class="kv"><span>Objective</span><span>Validate ultrasound-assisted extraction of sesame press-cake protein.</span><span>Control</span><span>Untreated sesame cake</span><span>Treatment</span><span>Ultrasound pretreatment</span></div>
+      <h3 style="margin-top:12px">Measure</h3>
+      <ol style="margin:0;padding-left:18px;font-size:12px;line-height:1.9"><li>Protein extraction yield</li><li>Protein purity</li><li>Phytate</li><li>Tannin</li><li>Saponin</li><li>Oxalate</li><li>Sensory attributes</li><li>Microbiological safety</li></ol>
+    </div><div>
+      <h3>Benchmark</h3>
+      <div class="okbox" style="margin-top:0"><b>Literature: protein extraction yield = 25.95%</b> (22.24% without ultrasound)<br>Yang et al. (2021), <i>Food Research International</i> · DOI <a href="https://doi.org/10.1016/j.foodres.2020.109907" target="_blank" rel="noopener" style="color:var(--blue)">10.1016/j.foodres.2020.109907</a><br><span class="ev ev-exp" style="margin:6px 0 0">🟢 EXPERIMENTAL</span></div>
+      <div class="flow" style="margin-top:14px"><div class="st"><b>1 Prediction</b>model output</div><div class="ar">→</div><div class="st"><b>2 Experiment</b>lab run</div><div class="ar">→</div><div class="st"><b>3 Error</b>abs · rel · MAPE · bias</div><div class="ar">→</div><div class="st"><b>4 Evidence update</b>add the observation to the dataset</div></div>
+    </div></div>
+  </div>
+</section>
+<section class="page" id="page-evidence">
+  <div class="heading"><div><h1>Evidence database</h1><p>Literature-backed observations for sesame press cake. Every row keeps its feedstock, treatment and experimental condition; anything a paper does not report is shown as NR and never filled with an assumed value.</p></div><span class="pill">Evidence layer</span></div>
+  <div class="card" style="margin-top:16px"><h2>Treatment evidence database</h2><p class="sub">Sesame press cake. Combined treatment is never derived by combining single-treatment efficiencies.</p>
+    <div class="tablewrap"><table class="evtable"><thead><tr><th>Treatment</th><th>Evidence-backed data</th><th>Confidence</th><th>Status</th></tr></thead><tbody id="evDbRows"></tbody></table></div>
+    <div class="disclaimer">Steam explosion and acidification are stored with the effect reported, and "NR in current evidence dataset" where the exact table value has not been extracted from the full paper. No percentage has been inferred from an abstract.</div>
+  </div>
+  <div class="card" style="margin-top:16px"><div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-end"><div><h2>Literature Evidence Dataset</h2><p class="sub" style="margin:0">Real observations only · <b id="evCount">0</b> rows · no synthetic data · ML not yet trained: too few validated observations, so outputs come from literature evidence + rule-based reasoning</p></div>
+    <div class="field" style="min-width:230px"><label>FILTER BY TREATMENT</label><select id="evFilter" onchange="evRenderDataset()"></select></div></div>
+    <div class="tablewrap" style="margin-top:12px"><table class="evtable"><thead><tr><th>Feedstock</th><th>Treatment</th><th class="nw">Temp (°C)</th><th class="nw">Time (min)</th><th>pH</th><th class="nw">S:L ratio</th><th>Initial compound</th><th>Final compound</th><th class="nw">Removal %</th><th class="nw">Protein recovery / extraction yield %</th><th class="nw">Protein purity %</th><th>Source</th><th>DOI</th><th>Experimental condition</th></tr></thead><tbody id="evDataRows"></tbody></table></div>
+    <div class="disclaimer">Entries were transcribed from the project's evidence brief. Check each row against the full paper (feedstock form, units, treatment attribution) before final submission.</div>
+  </div>
+</section>
+<div class="footer">SmartCake Intelligence · PS2 prototype · All scenario values are illustrative until supported by measured or cited evidence.</div>
+</div>
+</main>
+</div>
+<script>
+const defaults={protein:38,moisture:8,fibre:12};
+function val(id){return document.getElementById(id).value}
+function num(id,fallback=0){const n=Number(val(id));return Number.isFinite(n)?n:fallback}
+function risk(v){return v==='High'?3:v==='Medium'?2:1}
+const LC=[
+{k:'phytate',n:'Phytate',u:'mg/g',c:2.4,ref:3,imp:.8,conf:.89,d:'May reduce mineral bioavailability; treatment response depends on substrate and conditions.'},
+{k:'phenolics',n:'Total phenolics',u:'mg GAE/g',c:8.2,ref:10,imp:1,conf:1,d:'May contribute to astringency or interact with proteins; verify compound profile.'},
+{k:'tannins',n:'Tannins',u:'mg CE/g',c:3.1,ref:5,imp:.8,conf:.8,d:'Can bind proteins and add astringency; confirm with a tannin-specific assay.'},
+{k:'trypsin',n:'Trypsin inhibitor',u:'TIU/mg',c:18.5,ref:40,imp:.7,conf:.8,d:'May reduce protein digestibility; heat or enzymatic treatment can lower activity.'},
+{k:'saponins',n:'Saponins',u:'mg/g',c:1.2,ref:5,imp:.5,conf:.7,d:'May add bitterness or foaming; level depends on feedstock and processing.'},
+{k:'oxalate',n:'Oxalate',u:'%',c:.4,ref:1,imp:.6,conf:.8,d:'May affect mineral availability; relevance depends on feedstock and application.'},
+{k:'flavour',n:'Off-flavour',u:'intensity 0–10',c:5.5,ref:10,imp:.85,conf:.92,d:'Potential sensory barrier; confirm through a structured sensory panel.'},
+{k:'fibre',n:'Fibre / matrix',u:'%',c:12,ref:25,imp:.7,conf:.83,d:'May affect extraction, texture and ingredient functionality.'}
+];
+const LCM={phytate:'HPLC / enzymatic assay',phenolics:'Folin-Ciocalteu',tannins:'Vanillin / catechin equiv.',trypsin:'Kakade method (TIU/mg)',saponins:'Gravimetric / HPLC',oxalate:'HPLC / titrimetric',flavour:'Trained sensory panel',fibre:'AOAC / Van Soest'};
+const TYPEF={Illustrative:.35,Assumption:.5,Literature:.8,Measured:1};
+const TYPEI={Illustrative:'🔴',Assumption:'🟠',Literature:'🟡',Measured:'🟢'};
+function lcBuild(){
+ document.getElementById('lcRows').innerHTML=LC.map(x=>{const inp=(id,v,st,mx)=>'<input type="number" step="'+st+'" min="0"'+(mx?' max="'+mx+'"':'')+' id="lc_'+x.k+'_'+id+'" value="'+v+'" oninput="updateAll()" style="width:78px;padding:6px 7px;border:1px solid #d7e0e9;border-radius:8px">';const c=x.k==='fibre'?'<span id="lc_fibre_c">12</span> <small>'+x.u+' (from Fibre above)</small>':inp('c',x.c,'any')+' <small>'+x.u+'</small>';return '<tr><td><b>'+x.n+'</b></td><td>'+c+'</td><td>'+inp('ref',x.ref,'any')+'</td><td>'+inp('imp',x.imp,'0.05',1)+'</td><td>'+inp('conf',x.conf,'0.05',1)+'</td></tr>'}).join('');
+ const box='padding:6px 7px;border:1px solid #d7e0e9;border-radius:8px';
+ (document.getElementById('pvRows')||{}).innerHTML=LC.map(x=>{const t=(id,ph,v,w)=>'<input type="text" id="pv_'+x.k+'_'+id+'" placeholder="'+ph+'" value="'+(v||'')+'" style="width:'+w+'px;'+box+'">';
+  return '<tr><td><b>'+x.n+'</b></td><td><span id="pv_'+x.k+'_val">—</span> <small>'+x.u+'</small></td><td><select id="pv_'+x.k+'_basis" style="'+box+'"><option>Dry basis</option><option>As-is basis</option></select></td><td>'+t('method','Assay method',LCM[x.k],150)+'</td><td>'+t('source','Lab ID / DOI','',120)+'</td><td>'+t('date','YYYY-MM','',80)+'</td><td><select id="pv_'+x.k+'_type" onchange="updateAll()" style="'+box+'"><option>Illustrative</option><option>Assumption</option><option>Literature</option><option>Measured</option></select></td><td><span id="pv_'+x.k+'_conf">—</span></td></tr>'}).join('')}
+function lcScores(fibre){const o={};LC.forEach(x=>{const g=id=>{const e=document.getElementById('lc_'+x.k+'_'+id);return e?Number(e.value):NaN};const c=x.k==='fibre'?fibre:g('c'),ref=g('ref'),imp=g('imp'),conf=g('conf');const ok=[c,ref,imp,conf].every(Number.isFinite)&&ref>0;const cl=v=>Math.min(1,Math.max(0,v));
+ const te=document.getElementById('pv_'+x.k+'_type'),type=te?te.value:'Illustrative',f=TYPEF[type]||.35;
+ o[x.k]={k:x.k,n:x.n,d:x.d,s:ok?Math.round(cl(c/ref)*cl(imp)*cl(conf)*100):0,conf:cl(isFinite(conf)?conf:0),f:f,c:c};
+ const ve=document.getElementById('pv_'+x.k+'_val');if(ve)ve.textContent=Number.isFinite(c)?c:'—';const ce=document.getElementById('pv_'+x.k+'_conf');if(ce)ce.textContent=(TYPEI[type]||'')+' '+Math.round(o[x.k].conf*f*100)+'% · '+type});
+ const fe=document.getElementById('lc_fibre_c');if(fe)fe.textContent=fibre;return o}
+function lcEvidence(o){let n=0,d=0;Object.values(o).forEach(x=>{n+=x.s*x.conf*x.f;d+=x.s});return d>0?Math.round(n/d*100):0}
+function lcColor(s){return s>=70?{col:'#d65e54',tx:'#b33a3a'}:s>=50?{col:'#e8884a',tx:'#a64b0c'}:s>=35?{col:'#e3b23c',tx:'#8a6508'}:{col:'#2c9b7c',tx:'#147d64'}}
+function lcRanked(o){return Object.values(o).sort((a,b)=>b.s-a.s).map(x=>Object.assign({},x,lcColor(x.s)))}
+function lcApplyPreset(q){const f={High:1,Medium:.7,Low:.4};const rp=f[q.phytate]/.7,rh=f[q.phenolics],rf=f[q.flavour]/.7;LC.forEach(x=>{const e=document.getElementById('lc_'+x.k+'_c');if(!e)return;let r=1;if(x.k==='phytate')r=rp;else if(x.k==='phenolics'||x.k==='tannins')r=rh;else if(x.k==='flavour')r=rf;e.value=Number((x.c*r).toFixed(2))})}
+const TX={
+ enzyme:{name:'Enzyme + controlled hydration',short:'Enzyme (phytase)',rem:{phytate:.68,phenolics:.15,tannins:.10,trypsin:.05,saponins:.05,oxalate:.05,flavour:.10,fibre:.10},rec:88,water:12,energy:3.2,time:60,cost:8,proteinBump:4,use:'dhtm'},
+ wash:{name:'Washing / aqueous extraction',short:'Washing',rem:{phytate:.25,phenolics:.65,tannins:.60,trypsin:.15,saponins:.70,oxalate:.45,flavour:.35,fibre:0},rec:79,water:32,energy:2.8,time:45,cost:5,proteinBump:2,use:'tms'},
+ ferment:{name:'Controlled fermentation',short:'Fermentation',rem:{phytate:.45,phenolics:.70,tannins:.55,trypsin:.40,saponins:.30,oxalate:.25,flavour:.60,fibre:.05},rec:84,water:15,energy:3.8,time:480,cost:10,proteinBump:3,use:'htm'},
+ ultrasound:{name:'Ultrasound-assisted processing',short:'Ultrasound',rem:{phytate:.10,phenolics:.30,tannins:.25,trypsin:.10,saponins:.25,oxalate:.10,flavour:.20,fibre:.05},rec:86,water:10,energy:5.4,time:30,cost:11,proteinBump:3,use:'tm'},
+ combined:{name:'Combined staged treatment',short:'Combined',rem:{phytate:.70,phenolics:.78,tannins:.70,trypsin:.40,saponins:.65,oxalate:.45,flavour:.65,fibre:.10},rec:82,water:28,energy:6.2,time:360,cost:16,proteinBump:5,use:'dhtms'}
+};
+const PPDEF={dose:500,ph:5.5,temp:45,time:60,sl:5};
+const USEN={d:'dose',h:'pH',t:'temperature',m:'hold time',s:'solid:liquid'};
+function readParams(){const g=(id,d)=>{const n=Number(document.getElementById(id).value);return Number.isFinite(n)?n:d};return{dose:Math.max(0,g('opDose',500)),ph:g('opPh',5.5),temp:g('opTemp',45),time:Math.max(1,g('opTime',60)),sl:Math.max(1,g('opSL',5))}}
+function respM(k,pp){const g=(x,mu,sd)=>Math.exp(-0.5*Math.pow((x-mu)/sd,2));const u=TX[k].use;const F=P=>{let f=1;if(u.includes('d'))f*=1-Math.exp(-P.dose/300);if(u.includes('h'))f*=g(P.ph,5.5,1.2);if(u.includes('t'))f*=g(P.temp,45,12);if(u.includes('m'))f*=1-Math.exp(-P.time/45);if(u.includes('s'))f*=1-Math.exp(-P.sl/3);return f};const m=F(pp)/F(PPDEF);return Number.isFinite(m)?Math.min(1.25,Math.max(0.2,m)):1}
+function evalPath(k,lcs,pp,mods){mods=mods||{};const t=TX[k],P=pp||PPDEF,m=(pp?respM(k,pp):1)*(mods.rem||1);const eff={};Object.keys(t.rem).forEach(c=>eff[c]=Math.min(.95,t.rem[c]*m));
+ let nu=0,de=0;Object.keys(lcs).forEach(c=>{de+=lcs[c].s;nu+=lcs[c].s*(eff[c]||0)});const r=de>0?nu/de:0;
+ const rec=Math.max(40,Math.min(98,t.rec*(mods.rec||1)-8*(m-1)-0.4*Math.max(0,P.temp-60))),q=rec/100;
+ const water=t.water*(0.6+0.4*P.sl/5),energy=Math.max(.5,t.energy*(1+0.01*(P.temp-45))),time=Math.max(5,t.time+(P.time-60)),cost=Math.max(t.cost*.5,t.cost+((k==='enzyme'||k==='combined')?(P.dose-500)*0.004:0))*(mods.cost||1);
+ const cl=v=>Math.max(0,Math.min(1,v)),res=cl(1-(water/40*.5+energy/8*.5));
+ const fit=100*(.45*cl(r/.7)+.25*cl((q-.6)/.35)+.10*cl(1-cost/25)+.10*res+.10*cl(1-time/720));
+ return{k,name:t.name,short:t.short,m,eff,r,q,rec,water,energy,time,cost,res,sel:r*q,fit:Math.round(fit),bump:t.proteinBump}}
+function fmtTime(m){return m>=120?(m/60).toFixed(1)+' h':Math.round(m)+' min'}
+function goodColor(v){return v>=70?'#2c9b7c':v>=40?'#e3b23c':'#d65e54'}
+function applyRecommended(){window.autoPick=true;updateAll()}
+function scaleLcs(lcs,key,f){const o={};Object.keys(lcs).forEach(c=>{o[c]=Object.assign({},lcs[c]);if(c===key)o[c].s=Math.min(100,Math.round(lcs[c].s*f))});return o}
+const SAFE={none:40,partial:70,pass:100,fail:0},SAFEL={none:'Not assessed',partial:'Partially completed',pass:'Passed',fail:'Failed'};
+function model(lcs,k,pp,mods,ctx){
+ const c=evalPath(k,lcs,pp,mods);
+ const protein=Math.min(90,Math.max(1,ctx.rawP+c.bump*Math.min(1.25,c.m)));
+ const upCost=(ctx.rawCost+ctx.proc+c.cost+ctx.extra)/ctx.yieldF;
+ const targetP=ctx.measured?ctx.mnum:protein, cpp=upCost/(targetP/100);
+ const S=q=>lcs[q].s, ef=q=>c.eff[q]||0, cap=v=>Math.min(10,v);
+ const bit=cap(2+6*Math.max(S('phenolics'),S('saponins'))/100), beany=cap(2+6*S('flavour')/100), ast=cap(1.5+6*Math.max(S('tannins'),S('phenolics'))/100);
+ const bitA=Math.max(1,bit*(1-.8*Math.max(ef('phenolics'),ef('saponins')))), beanyA=Math.max(1,beany*(1-.8*ef('flavour'))), astA=Math.max(1,ast*(1-.8*Math.max(ef('tannins'),ef('phenolics'))));
+ const accB=4.8, accA=Math.min(8.5,accB+(((bit-bitA)+(beany-beanyA)+(ast-astA))/3)*.8);
+ const cl=v=>Math.max(0,Math.min(1,v));
+ const comps=[['Compound reduction',20,cl(c.r/.7)*100],['Protein recovery',20,cl((c.rec-60)/35)*100],['Cost competitiveness',15,cl((1.2-cpp/ctx.peaCPP)/.7)*100],['Sensory acceptance (scenario)',15,accA/10*100],['Resource intensity',10,c.res*100],['Safety',15,SAFE[ctx.safety]],['Evidence confidence',5,ctx.evidence]];
+ const score=Math.round(comps.reduce((a,x)=>a+x[1]*x[2]/100,0));
+ return{c,protein,upCost,targetP,cpp,bit,beany,ast,bitA,beanyA,astA,accB,accA,comps,score}}
+function decide(m,ctx){
+ const cons=[['Protein recovery ≥ 70%',m.c.rec>=70,m.c.rec.toFixed(0)+'%'],['Cost per kg protein ≤ pea isolate',m.cpp<=ctx.peaCPP,'₹'+m.cpp.toFixed(0)+' vs ₹'+ctx.peaCPP.toFixed(0)],['Scenario sensory ≥ 6/10',m.accA>=6,m.accA.toFixed(1)+'/10 (estimate)'],['Safety gate passed',ctx.safety==='pass'?true:ctx.safety==='fail'?false:null,SAFEL[ctx.safety]]];
+ let tier='VALIDATE';
+ if(cons.some(c=>c[1]===false)||m.score<45)tier='REJECT';else if(m.score>=75&&ctx.evidence>=70&&ctx.safety==='pass')tier='GO';
+ return{tier,cons}}
+function sens(lcs,k,pp,ctx,pk,pname){
+ const defs=[['conc','Actual '+pname.toLowerCase()+' concentration',f=>model(scaleLcs(lcs,pk,f),k,pp,{},ctx)],['rem','Treatment compound-removal efficiency',f=>model(lcs,k,pp,{rem:f},ctx)],['rec','Protein recovery',f=>model(lcs,k,pp,{rec:f},ctx)],['cost','Treatment cost',f=>model(lcs,k,pp,{cost:f},ctx)]];
+ return defs.map(([id,label,fn])=>{const lo=fn(.8),hi=fn(1.2);const sc=[lo.score,hi.score];return{id,label,min:Math.min(...sc),max:Math.max(...sc),swing:Math.abs(sc[1]-sc[0]),tiers:[decide(lo,ctx).tier,decide(hi,ctx).tier]}}).sort((a,b)=>b.swing-a.swing)}
+function updateAll(){
+ const feed=val('feedstock');
+ const rawP=Math.max(0,Math.min(100,num('rawProtein',38))), fibre=num('fibre',12);
+ const presets={
+ 'Sesame press-cake':{protein:38,moisture:8,fibre:12,phytate:'Medium',phenolics:'High',flavour:'Medium'},
+ 'Groundnut cake':{protein:45,moisture:7,fibre:9,phytate:'Medium',phenolics:'Medium',flavour:'High'},
+ 'Rice bran':{protein:16,moisture:9,fibre:11,phytate:'High',phenolics:'Medium',flavour:'Medium'},
+ 'Guar meal':{protein:48,moisture:10,fibre:8,phytate:'Medium',phenolics:'Low',flavour:'Medium'},
+ 'Pulse residue':{protein:24,moisture:10,fibre:16,phytate:'High',phenolics:'Medium',flavour:'Medium'},
+ 'Almond cake':{protein:35,moisture:7,fibre:14,phytate:'Medium',phenolics:'Medium',flavour:'Low'}
+ };
+ if(window.lastFeed!==feed){const q=presets[feed];document.getElementById('rawProtein').value=q.protein;document.getElementById('moisture').value=q.moisture;document.getElementById('fibre').value=q.fibre;lcApplyPreset(q);window.lastFeed=feed;window.autoPick=true;return updateAll()}
+ const lcs=lcScores(fibre), ranked=lcRanked(lcs), top=ranked[0], primary=top.n, evidence=lcEvidence(lcs);
+ const safety=val('safetyStatus');
+ const mraw=val('targetProtein').trim(), mnum=Number(mraw), measured=mraw!==''&&Number.isFinite(mnum)&&mnum>0;
+ const peaCost=num('peaCost',185), peaP=Math.max(1,num('peaProtein',80));
+ const ctx={rawP,rawCost:num('rawCost',12),proc:num('processCost',20),yieldF:Math.max(1,num('yieldPct',76))/100,extra:num('extraCost',0),measured,mnum:Math.min(100,mnum),peaCost,peaP,peaCPP:peaCost/(peaP/100),safety,evidence};
+ const baseRank=Object.keys(TX).map(k=>evalPath(k,lcs,null)).sort((a,b)=>b.fit-a.fit);
+ if(window.autoPick){document.getElementById('pathway').value=baseRank[0].k;window.autoPick=false}
+ const pathway=val('pathway'), pp=readParams();
+ const rows=Object.keys(TX).map(k=>evalPath(k,lcs,k===pathway?pp:null)).sort((a,b)=>b.fit-a.fit);
+ const best=rows[0], p=TX[pathway];
+ const M=model(lcs,pathway,pp,{},ctx), cur=M.c, protein=M.protein, D=decide(M,ctx), SN=sens(lcs,pathway,pp,ctx,top.k,primary);
+ // limiting-compound map
+ document.getElementById('compoundMap').innerHTML=ranked.map(x=>`<div class="compound"><div style="flex:1"><div style="display:flex;align-items:center;gap:7px"><span style="width:10px;height:10px;border-radius:50%;background:${x.col};display:inline-block"></span><b>${x.n}</b></div><small>${x.d}</small><div class="bar"><i style="width:${x.s}%;background:${x.col}"></i></div></div><span class="tag" style="background:${x.col}22;color:${x.tx};font-size:12px">${x.s}/100</span></div>`).join('');
+ document.getElementById('diagnosisTitle').textContent='Priority to verify: '+primary+' · limitation score '+top.s+'/100';
+ document.getElementById('diagnosisText').textContent='Run a validated assay or sensory test, then select treatment based on measured severity, protein retention, cost and safety.';
+ (document.getElementById('evidenceTxt')||{}).textContent=evidence+'%';
+ document.getElementById('kpi-bottleneck').textContent=primary;document.getElementById('kpi-bottleneck-sub').textContent='Limitation score '+top.s+'/100';
+ // ranking table + banner
+ const contrib=Object.keys(best.eff).map(c=>[lcs[c].n,lcs[c].s*(best.eff[c]||0)]).sort((a,b)=>b[1]-a[1]);
+ const top2=contrib.slice(0,2).map(x=>x[0].toLowerCase()).join(' and ');
+ document.getElementById('rankRows').innerHTML=rows.map((r,i)=>`<tr${i===0?' style="background:#f0faf6"':''}><td>${i+1}</td><td><b>${r.short}</b>${i===0?' <span class="tag low">Recommended</span>':''}${r.k===pathway?' <span class="tag info">Selected</span>':''}</td><td>${(r.r*100).toFixed(0)}%</td><td>${r.rec.toFixed(0)}%</td><td>₹${r.cost.toFixed(0)}</td><td><b>${r.sel.toFixed(2)}</b></td><td><b>${r.fit}</b>/100</td></tr>`).join('');
+ const cur0=rows.find(r=>r.k===pathway);
+ document.getElementById('recBanner').innerHTML=`<b>Evidence-Guided Intelligence Engine · ${feed}: ${best.short}</b><span class="sub">Highest fit score (${best.fit}/100) in an evidence-weighted, multi-objective ranking. It removes about ${(best.r*100).toFixed(0)}% of the severity-weighted limiting compounds (mainly ${top2}) while keeping about ${best.rec.toFixed(0)}% of protein. Runner-up: ${rows[1].short} (${rows[1].fit}/100).${pathway!==best.k?' Your selected pathway is '+cur0.short+' ('+cur0.fit+'/100).':''} Rule-based reasoning on literature evidence for this proof of concept; ML not yet trained.</span>`;
+ // why this treatment
+ const runner=rows[1], pk=top.k, pRem=((best.eff[pk]||0)*100).toFixed(0);
+ const avg=f=>rows.filter(r=>r!==best).reduce((a,r)=>a+f(r),0)/(rows.length-1);
+ const tr=[['time','Longer processing time',best.time/avg(r=>r.time)],['cost','Higher treatment cost',best.cost/avg(r=>r.cost)],['water','Higher water use',best.water/avg(r=>r.water)],['energy','Higher energy use',best.energy/avg(r=>r.energy)]].sort((a,b)=>b[2]-a[2]);
+ const tradeoff=tr[0][2]>1.15?tr[0][1]:'No major trade-off versus alternatives';
+ const dRem=Math.round((best.r-runner.r)*100), dRec=Math.round(best.rec-runner.rec);
+ const fx=(l,v,sub)=>`<div><div class="metric-label">${l}</div><div style="font-weight:800;font-size:16px">${v}</div>${sub?'<div class="sub">'+sub+'</div>':''}</div>`;
+ document.getElementById('whyFacts').innerHTML=[fx('Primary bottleneck',primary,'Limitation score '+top.s+'/100'),fx('Treatment capability',pRem+'% reduction','of '+primary.toLowerCase()),fx('Protein retention',best.rec.toFixed(0)+'%','mass recovery assumption'),fx('Water',best.water.toFixed(0)+' L/kg',''),fx('Cost','₹'+best.cost.toFixed(0)+'/kg feedstock',''),fx('Processing time',fmtTime(best.time),''),fx('Energy',best.energy.toFixed(1)+' MJ/kg',''),fx('Trade-off',tradeoff,'')].join('');
+ document.getElementById('whyText').innerHTML=`<b>Final explanation</b><span class="sub">${best.short} is preferred because ${primary.toLowerCase()} is the dominant barrier (${top.s}/100) and this treatment gives ${pRem}% reduction of it, with ${best.rec.toFixed(0)}% of protein retained. Compared with ${runner.short} it removes ${Math.abs(dRem)} point${Math.abs(dRem)===1?'':'s'} ${dRem>=0?'more':'less'} of the weighted compound load and retains ${Math.abs(dRec)} point${Math.abs(dRec)===1?'':'s'} ${dRec>=0?'more':'less'} protein. Main trade-off: ${tradeoff.toLowerCase()}.</span>`;
+ // comparison chart
+ const hr=rows.slice().sort((a,b)=>b.r-a.r)[0];
+ const barRow=(l,v,col)=>`<div style="display:grid;grid-template-columns:105px 1fr 40px;gap:8px;align-items:center;font-size:11px;margin:3px 0"><span>${l}</span><div class="bar" style="margin:0"><i style="width:${Math.max(2,v)}%;background:${col}"></i></div><b>${v.toFixed(0)}%</b></div>`;
+ document.getElementById('cmpChart').innerHTML=rows.map((r,i)=>`<div style="display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:center;padding:10px 8px;border-bottom:1px solid #edf1f5;${i===0?'background:#f0faf6;border-radius:8px':''}"><div><b>${r.short}</b>${i===0?' <span class="tag low">Best overall</span>':''}${r.k===hr.k&&i!==0?' <span class="tag med">Highest removal</span>':''}<div class="sub">Fit ${r.fit}/100 · selectivity ${r.sel.toFixed(2)}</div></div><div>${barRow('Compound removal',r.r*100,'#d65e54')}${barRow('Protein recovery',r.rec,'#2c9b7c')}<div class="sub" style="margin-top:4px">₹${r.cost.toFixed(0)}/kg · ${r.water.toFixed(0)} L/kg water · ${fmtTime(r.time)}</div></div></div>`).join('');
+ document.getElementById('cmpNote').innerHTML=hr.k!==best.k?`<b>Best overall ≠ highest removal</b><span class="sub">${hr.short} has the highest removal (${(hr.r*100).toFixed(0)}%), but ${best.short} ranks first once protein recovery (${best.rec.toFixed(0)}% vs ${hr.rec.toFixed(0)}%), cost, resources and time are included.</span>`:`<b>Best overall ≠ highest removal</b><span class="sub">Here the highest-removal treatment also ranks first, but that is not guaranteed: the ranking trades off removal, protein retention, cost, resources and time, so a different feedstock or constraint can change the winner.</span>`;
+ // protein mass retained
+ const inP=rawP*10, recP=inP*cur.rec/100;
+ document.getElementById('massCard').innerHTML=`<b>Protein mass retained: ${cur.rec.toFixed(1)}%</b><span class="sub">Input ${inP.toFixed(0)} g protein/kg feedstock → recovered ${recP.toFixed(0)} g. Concentration ${rawP.toFixed(0)}% → ${protein.toFixed(0)}%, but concentration rising does not necessarily mean protein mass rose; judge by mass retained.</span>`;
+ // outcomes
+ document.getElementById('outProtein').textContent=protein.toFixed(0)+'%';document.getElementById('outRecovery').textContent=cur.rec.toFixed(0)+'%';document.getElementById('outWater').textContent=cur.water.toFixed(0)+' L/kg';document.getElementById('outEnergy').textContent=cur.energy.toFixed(1)+' MJ/kg';
+ document.getElementById('outRemoval').textContent=(cur.r*100).toFixed(0)+'%';document.getElementById('outSel').textContent=cur.sel.toFixed(2);document.getElementById('outTime').textContent=fmtTime(cur.time);document.getElementById('outTxCost').textContent='₹'+cur.cost.toFixed(0)+'/kg';
+ document.getElementById('kpi-feedstock').textContent=feed;document.getElementById('kpi-protein').textContent=protein.toFixed(0);
+ document.getElementById('validationList').innerHTML=[`Measure ${primary.toLowerCase()} before and after treatment`,`Measure protein concentration AND protein mass recovery`,`Record water, energy, time, enzyme / starter dose and yield`,`Check relevant food safety and allergen controls`].map(t=>`<div class="compound"><div><b>${t}</b></div><span class="tag info">To measure</span></div>`).join('');
+ // optimizer
+ document.getElementById('optActive').textContent='Parameters used by '+p.short+': '+p.use.split('').map(c=>USEN[c]).join(', ')+'.';
+ const e=c=>((cur.eff[c]||0)*100).toFixed(0)+'%';
+ document.getElementById('optOut').innerHTML=[['Phytate reduction',e('phytate')],['Total phenolics reduction',e('phenolics')],['Tannin reduction',e('tannins')],['Severity-weighted compound removal',(cur.r*100).toFixed(0)+'%'],['Protein recovery',cur.rec.toFixed(0)+'%'],['Water',cur.water.toFixed(1)+' L/kg'],['Energy',cur.energy.toFixed(1)+' MJ/kg'],['Processing time',fmtTime(cur.time)],['Treatment cost','₹'+cur.cost.toFixed(0)+'/kg feedstock'],['Efficacy vs reference conditions','×'+cur.m.toFixed(2)]].map(([a,b])=>`<tr><td>${a}</td><td><b>${b}</b></td></tr>`).join('');
+ // economics
+ const costPerProtein=M.cpp, peaCPP=ctx.peaCPP, upCost=M.upCost, targetP=M.targetP;
+ const cpDiff=(1-costPerProtein/peaCPP)*100;
+ document.getElementById('proteinAdjusted').textContent='₹'+costPerProtein.toFixed(0);document.getElementById('peaCPPDisplay').textContent='₹'+peaCPP.toFixed(0);
+ document.getElementById('cpDiff').textContent=Math.abs(cpDiff).toFixed(0)+'% '+(cpDiff>=0?'lower':'higher')+' estimated protein cost than imported pea isolate';
+ document.getElementById('upCost').textContent='₹'+upCost.toFixed(0);document.getElementById('peaCostDisplay').textContent='₹'+peaCost.toFixed(0);
+ document.getElementById('kpi-cost').textContent=costPerProtein.toFixed(0);
+ document.getElementById('tUpProtein').textContent=Number(targetP.toFixed(1))+'% ('+(measured?'measured · USER INPUT':'modelled scenario')+')';document.getElementById('tPeaProtein').textContent=peaP+'%';{const sb=document.getElementById('tUpScn');if(sb)sb.style.display=measured?'none':'inline-block'}document.getElementById('tUpCost').textContent='₹'+upCost.toFixed(0);document.getElementById('tPeaCost').textContent='₹'+peaCost.toFixed(0);document.getElementById('tUpCP').textContent='₹'+costPerProtein.toFixed(0);document.getElementById('tPeaCP').textContent='₹'+peaCPP.toFixed(0);document.getElementById('tWater').textContent=cur.water.toFixed(0)+' L/kg*';document.getElementById('tEnergy').textContent=cur.energy.toFixed(1)+' MJ/kg*';document.getElementById('tTime').textContent=fmtTime(cur.time)+'*';document.getElementById('tTxCost').textContent='₹'+cur.cost.toFixed(0)+'/kg feedstock';
+ // sensory (scenario estimate)
+ function sensoryHTML(arr,after){return arr.map(([name,score])=>`<div class="sensory"><span>${name}</span><div class="track ${after?'after':''}"><i style="width:${Math.max(4,Math.min(10,score))/10*100}%"></i></div><b>${score.toFixed(1)}</b></div>`).join('')}
+ document.getElementById('sensoryBefore').innerHTML=sensoryHTML([['Bitterness',M.bit],['Beany / oxidized flavour',M.beany],['Astringency',M.ast],['Overall acceptance',M.accB]],false);
+ document.getElementById('sensoryAfter').innerHTML=sensoryHTML([['Bitterness',M.bitA],['Beany / oxidized flavour',M.beanyA],['Astringency',M.astA],['Overall acceptance',M.accA]],true);
+ document.getElementById('sensorySummary').innerHTML=`<div class="card" style="box-shadow:none"><div class="metric-label">Scenario acceptance estimate</div><div class="metric">${M.accA.toFixed(1)}<small>/10 ± 1.0</small></div><span class="tag med">Scenario estimate</span></div><div class="card" style="box-shadow:none"><div class="metric-label">Interval</div><div class="metric">${Math.max(0,M.accA-1).toFixed(1)}–${Math.min(10,M.accA+1).toFixed(1)}<small>/10</small></div><span class="tag info">Assumed ±1.0</span></div><div class="card" style="box-shadow:none"><div class="metric-label">Validation required</div><div class="metric">Yes</div><span class="tag high">Blinded panel needed</span></div>`;
+ // decision hero
+ const tierMap={GO:['🟢 GO TO PILOT','var(--green)','All critical constraints satisfied.'],VALIDATE:['🟡 VALIDATE','var(--amber)',safety==='pass'?'Potentially attractive, but one or more measurements are uncertain.':'Potentially attractive, but the safety gate has not been passed and one or more measurements are uncertain; the decision cannot be GO yet.'],REJECT:['🔴 REJECT / REDESIGN','var(--red)',safety==='fail'?'Safety gate failed: do not proceed, regardless of score.':'Does not meet the protein, sensory, cost or safety constraints, or the overall score is too low.']};
+ const tm=tierMap[D.tier];
+ const dt=document.getElementById('decTier');dt.textContent=tm[0];dt.style.color=tm[1];document.getElementById('decTierText').textContent=tm[2];
+ const sc=document.getElementById('feasScore');sc.textContent=M.score;sc.style.color=goodColor(M.score);
+ const acceptable=Object.keys(TX).map(k=>model(lcs,k,k===pathway?pp:null,{},ctx)).filter(m=>m.c.r>=.5&&m.c.rec>=70&&m.accA>=6).sort((a,b)=>a.cpp-b.cpp)[0];
+ document.getElementById('decFacts').innerHTML=[fx('Primary bottleneck',primary,'Limitation score '+top.s+'/100'),fx('Treatment evaluated',cur0.short,pathway===best.k?'Engine recommendation':'Engine recommends '+best.short),fx('Protein recovery',cur.rec.toFixed(0)+'%','mass retained'),fx('Cost per kg protein','₹'+costPerProtein.toFixed(0),'pea isolate ₹'+peaCPP.toFixed(0)),fx('Scenario sensory',M.accA.toFixed(1)+'/10','estimate, needs panel'),fx('Evidence confidence',evidence+'%',evidence<70?'below 70% for GO':'meets threshold'),fx('Safety gate',SAFEL[safety],safety==='pass'?'':'required before pilot'),fx('Cheapest acceptable',acceptable?TX[acceptable.c.k].short:'None',acceptable?'₹'+acceptable.cpp.toFixed(0)+'/kg protein':'no treatment meets thresholds')].join('');
+ document.getElementById('decCons').innerHTML=D.cons.map(([n,ok,v])=>`<div class="compound"><div><b>${n}</b><small>${v}</small></div><span class="tag ${ok===true?'low':ok===false?'high':'med'}">${ok===true?'Met':ok===false?'Not met':'Pending'}</span></div>`).join('');
+ document.getElementById('feasBreakdown').innerHTML=M.comps.map(([n,w,v])=>`<div class="compound"><div style="flex:1"><b>${n}</b> <small style="display:inline">· weight ${w}%</small><div class="bar"><i style="width:${Math.max(2,v)}%;background:${goodColor(v)}"></i></div></div><span class="tag" style="background:${goodColor(v)}22;color:#344256;font-size:12px">${Math.round(v)}/100</span></div>`).join('');
+ // decision sensitivity + next measurement
+ const maxSw=Math.max(1,...SN.map(x=>x.swing));
+ document.getElementById('sensRows').innerHTML=SN.map((x,i)=>{const alt=[...new Set(x.tiers)].filter(t=>t!==D.tier);return `<div class="compound"><div style="flex:1"><b>${i+1}. ${x.label}</b><div class="bar"><i style="width:${Math.max(3,x.swing/maxSw*100)}%;background:#2458a6"></i></div><small>±20% moves the score ${x.min}–${x.max} (swing ${x.swing} pts)${alt.length?' · could change the decision to '+alt.join(' / '):''}</small></div></div>`}).join('');
+ const nm={conc:'Measure '+primary.toLowerCase()+' in the untreated feedstock (replicates, stated basis)',rem:'Measure '+primary.toLowerCase()+' before and after '+p.short.toLowerCase(),rec:'Measure protein mass recovery with a full mass balance',cost:'Obtain a treatment cost quote or pilot costing'}[SN[0].id];
+ document.getElementById('feasNext').textContent=nm+'. Decision sensitivity ranks this as the largest uncertainty (±20% moves the score by '+SN[0].swing+' points).';
+ document.getElementById('experimentTitle').textContent=nm;
+ document.getElementById('experimentReason').textContent='Decision sensitivity ranks this as the largest source of uncertainty: a ±20% change moves the SmartCake score by '+SN[0].swing+' points.';
+ document.getElementById('experimentChecks').innerHTML=[`Untreated control: assay ${primary.toLowerCase()}`,`Treatment sample: same assay, same units and basis`,'Protein concentration and mass recovery','Water / energy / processing time','Blinded sensory evaluation if food application is intended','Safety and allergen checks relevant to the feedstock'].map(t=>`<label style="display:flex;gap:9px;align-items:flex-start;margin:10px 0;font-size:12px"><input type="checkbox"> <span>${t}</span></label>`).join('');
+ const pc=num('lc_phenolics_c',NaN);window.pvPred={phen:pc*(1-(cur.eff.phenolics||0)),prot:protein,rec:cur.rec,sens:M.accA};pvCalc();
+}
+function pvCalc(){let sum=0,n=0;[['phen',2],['prot',1],['rec',1],['sens',1]].forEach(([k,d])=>{const pr=window.pvPred?window.pvPred[k]:NaN;document.getElementById('pv2_'+k+'_pred').textContent=Number.isFinite(pr)?pr.toFixed(d):'—';const raw=document.getElementById('pv2_'+k+'_lab').value,lab=parseFloat(raw),e=document.getElementById('pv2_'+k+'_err');if(raw!==''&&Number.isFinite(lab)&&Number.isFinite(pr)&&pr!==0){const er=Math.abs(lab-pr)/Math.abs(pr)*100;e.textContent=er.toFixed(1)+'%';sum+=er;n++}else e.textContent='—'});document.getElementById('mape').textContent=n?(sum/n).toFixed(1)+'% (n='+n+')':'Enter lab results'}
+function showPage(page){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('page-'+page).classList.add('active');document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));document.getElementById('crumb').textContent=({home:'Home',overview:'Decision dashboard',analysis:'By-product analysis',treatment:'Treatment engine',compare:'Prediction & economics',formula:'Formula calculator',experiment:'Next experiment'})[page];window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+function resetDemo(){document.getElementById('feedstock').value='Sesame press-cake';window.lastFeed=null;window.autoPick=true;document.getElementById('rawCost').value=12;document.getElementById('processCost').value=20;document.getElementById('yieldPct').value=76;document.getElementById('targetProtein').value='';document.getElementById('peaCost').value=185;document.getElementById('peaProtein').value=80;document.getElementById('extraCost').value=0;['opDose','opPh','opTemp','opTime','opSL'].forEach((i,n)=>document.getElementById(i).value=[500,5.5,45,60,5][n]);document.getElementById('safetyStatus').value='none';window.lastFeed='Sesame press-cake';lcBuild();updateAll()}
+function saveTrial(){const note=val('trialNotes').trim();document.getElementById('saveMessage').textContent=note?'Trial note captured in this page session: '+note:'Enter a result or trial note first.'}
+window.lastFeed='Sesame press-cake';lcBuild();window.autoPick=true;updateAll();
+const r2=n=>Number(n.toFixed(2));
+const FC=[
+{name:'Protein mass in material',unit:'g',eq:'Protein mass (g) = material mass × protein fraction',method:'Calculate protein mass from material mass and protein fraction.',note:'Protein percentage must use the stated sample basis.',inputs:[['m','Material mass (g)',100,0,1e9],['p','Protein content (%)',25,0,100]],calc:v=>({val:v.m*v.p/100,steps:[v.m+' × ('+v.p+'/100) = '+r2(v.m*v.p/100)+' g']})},
+{name:'Protein recovery',unit:'%',eq:'Recovery (%) = (product mass × product protein) ÷ (feed mass × feed protein) × 100',method:'Compare protein mass in the product with protein mass in the feed.',note:'Use the same basis (dry or as-is) for feed and product.',inputs:[['mi','Feed mass (g)',100,0,1e9],['pi','Feed protein (%)',25,0,100],['mo','Product mass (g)',28,0,1e9],['po','Product protein (%)',70,0,100]],check:v=>v.mi*v.pi<=0?'Feed protein mass must be greater than zero.':null,warn:x=>x>100?'Recovery above 100% suggests a mass-balance or basis error; recheck inputs.':null,calc:v=>{const a=v.mo*v.po/100,b=v.mi*v.pi/100;return{val:a/b*100,steps:['Protein in feed = '+v.mi+' × ('+v.pi+'/100) = '+r2(b)+' g','Protein in product = '+v.mo+' × ('+v.po+'/100) = '+r2(a)+' g','Recovery = '+r2(a)+' ÷ '+r2(b)+' × 100 = '+r2(a/b*100)+' %']}}},
+{name:'Moisture content (wet basis)',unit:'%',eq:'Moisture (%) = (wet mass − dry mass) ÷ wet mass × 100',method:'Water lost on drying as a share of the original sample mass.',note:'Dry mass must be a constant weight after drying.',inputs:[['w','Wet mass (g)',10,0,1e9],['d','Dry mass (g)',9.2,0,1e9]],check:v=>v.w<=0?'Wet mass must be greater than zero.':v.d>v.w?'Dry mass cannot exceed wet mass.':null,calc:v=>({val:(v.w-v.d)/v.w*100,steps:['Water mass = '+v.w+' − '+v.d+' = '+r2(v.w-v.d)+' g','Moisture = '+r2(v.w-v.d)+' ÷ '+v.w+' × 100 = '+r2((v.w-v.d)/v.w*100)+' %']})},
+{name:'Dilution (C1V1 = C2V2)',unit:'mL',eq:'V1 = (C2 × V2) ÷ C1',method:'Volume of stock solution needed to make the target solution.',note:'C1 and C2 must use the same concentration unit.',inputs:[['c1','Stock concentration C1',10,0,1e9],['c2','Target concentration C2',2,0,1e9],['v2','Final volume V2 (mL)',50,0,1e9]],check:v=>v.c1<=0?'Stock concentration must be greater than zero.':v.c2>v.c1?'Target concentration cannot exceed stock concentration.':null,calc:v=>({val:v.c2*v.v2/v.c1,steps:['V1 = ('+v.c2+' × '+v.v2+') ÷ '+v.c1+' = '+r2(v.c2*v.v2/v.c1)+' mL','Diluent to add = '+v.v2+' − '+r2(v.c2*v.v2/v.c1)+' = '+r2(v.v2-v.c2*v.v2/v.c1)+' mL']})},
+{name:'Cost per kg of protein',unit:'₹/kg protein',eq:'Cost per kg protein = ingredient cost per kg ÷ protein fraction',method:'Normalises ingredient cost by its protein content so ingredients can be compared fairly.',note:'Does not include functionality, sensory or processing differences.',inputs:[['c','Ingredient cost (₹/kg)',120,0,1e9],['p','Protein content (%)',42,0,100]],check:v=>v.p<=0?'Protein content must be greater than zero.':null,calc:v=>({val:v.c/(v.p/100),steps:[v.c+' ÷ ('+v.p+'/100) = '+r2(v.c/(v.p/100))+' ₹/kg protein']})},
+{name:'Process yield',unit:'%',eq:'Yield (%) = output mass ÷ input mass × 100',method:'Share of input mass recovered as product.',note:'Use the same moisture basis for input and output.',inputs:[['i','Input mass (g)',100,0,1e9],['o','Output mass (g)',76,0,1e9]],check:v=>v.i<=0?'Input mass must be greater than zero.':null,warn:x=>x>100?'Yield above 100% suggests a basis or measurement error.':null,calc:v=>({val:v.o/v.i*100,steps:[v.o+' ÷ '+v.i+' × 100 = '+r2(v.o/v.i*100)+' %']})},
+{name:'Compound removal %',unit:'%',eq:'Removal (%) = (C_initial − C_final) ÷ C_initial × 100',method:'Share of a limiting compound removed by treatment.',note:'Use the same unit, assay and moisture basis before and after.',inputs:[['ci','Initial concentration',8.2,0,1e9],['cf','Final concentration',3.1,0,1e9]],check:v=>v.ci<=0?'Initial concentration must be greater than zero.':null,warn:x=>x<0?'Final concentration exceeds initial; check the basis or whether the compound increased.':null,calc:v=>({val:(v.ci-v.cf)/v.ci*100,steps:['Removed = '+v.ci+' − '+v.cf+' = '+r2(v.ci-v.cf),'Removal = '+r2(v.ci-v.cf)+' ÷ '+v.ci+' × 100 = '+r2((v.ci-v.cf)/v.ci*100)+' %']})},
+{name:'Protein loss %',unit:'%',eq:'Protein loss (%) = (Protein_initial − Protein_final) ÷ Protein_initial × 100',method:'Share of protein mass lost during treatment (mass, not concentration).',note:'Protein mass = sample mass × protein fraction on a stated basis.',inputs:[['pi','Initial protein mass (g)',38,0,1e9],['pf','Final protein mass (g)',33.4,0,1e9]],check:v=>v.pi<=0?'Initial protein mass must be greater than zero.':null,warn:x=>x<0?'Final protein mass exceeds initial; recheck the mass balance.':null,calc:v=>({val:(v.pi-v.pf)/v.pi*100,steps:['Lost = '+v.pi+' − '+v.pf+' = '+r2(v.pi-v.pf)+' g','Loss = '+r2(v.pi-v.pf)+' ÷ '+v.pi+' × 100 = '+r2((v.pi-v.pf)/v.pi*100)+' %']})}
+];
+function fcCur(){return FC[+document.getElementById('fcSelect').value]}
+function fcBuild(){const c=fcCur();document.getElementById('fcInputs').innerHTML=c.inputs.map(([k,l,d])=>'<div class="field" style="margin-top:14px"><label>'+l+' <span class="ev ev-usr">🟠 USER INPUT</span></label><input type="number" step="any" id="fc_'+k+'" value="'+d+'" oninput="fcCalc()"></div>').join('');document.getElementById('fcEq').innerHTML='<b>'+c.eq+'</b><p class="sub" style="margin:8px 0 0">'+c.method+'</p><p class="sub" style="margin:4px 0 0">'+c.note+'</p>';fcCalc()}
+function fcCalc(){const c=fcCur();const v={};let err=null;c.inputs.forEach(([k,l,d,mn,mx])=>{const raw=document.getElementById('fc_'+k).value;const n=parseFloat(raw);v[k]=n;if(raw===''||!isFinite(n))err=err||l+' is required.';else if(n<mn||n>mx)err=err||l+' must be between '+mn+' and '+(mx>=1e9?'no upper limit':mx)+'.'});if(!err&&c.check)err=c.check(v);const tag=document.getElementById('fcTag'),res=document.getElementById('fcResult'),note=document.getElementById('fcNote'),steps=document.getElementById('fcSteps');if(err){tag.className='tag high';tag.textContent='Check inputs';res.textContent='—';note.textContent=err;steps.innerHTML='';window.fcLast='';return}const o=c.calc(v);const w=c.warn?c.warn(o.val):null;tag.className='tag '+(w?'med':'info');tag.textContent=w?'Review':'Calculated';res.textContent=r2(o.val)+' '+c.unit;note.textContent=w||c.note;steps.innerHTML=o.steps.map(s=>'<div class="compound"><div><small style="margin:0">'+s+'</small></div></div>').join('');window.fcLast=c.name+': '+r2(o.val)+' '+c.unit+' ('+c.eq+')'}
+function fcCopy(btn){const t=window.fcLast||'';const old=btn.textContent;const done=m=>{btn.textContent=m;setTimeout(()=>btn.textContent=old,1400)};if(!t){done('Nothing to copy');return}try{navigator.clipboard.writeText(t).then(()=>done('Copied'),()=>done('Copy blocked'))}catch(e){done('Copy blocked')}}
+(function(){document.getElementById('fcSelect').innerHTML=FC.map((c,i)=>'<option value="'+i+'">'+c.name+'</option>').join('');fcBuild()})();
+</script>
+
+<script>
+(function(){
+const EVD=[
+{f:'Sesame cake',t:'None (baseline composition)',T:'NR',tm:'NR',ph:'NR',sl:'NR',i:'Protein 40.74 ± 0.02% DM',fi:'NR',rm:'NR',rc:'NR',pu:'NR',s:'Li et al. (2023), Ind. Crops Prod.',doi:'10.1016/j.indcrop.2023.117697',c:'Untreated cake composition',k:'base'},
+{f:'Sesame cake',t:'None (baseline composition)',T:'NR',tm:'NR',ph:'NR',sl:'NR',i:'Fat 12.78 ± 0.90% DM',fi:'NR',rm:'NR',rc:'NR',pu:'NR',s:'Li et al. (2023), Ind. Crops Prod.',doi:'10.1016/j.indcrop.2023.117697',c:'Untreated cake composition',k:'base'},
+{f:'Sesame (per source; confirm form)',t:'None (baseline antinutrients)',T:'NR',tm:'NR',ph:'NR',sl:'NR',i:'Oxalates 0.48–1.04 mg/100 g DM',fi:'NR',rm:'NR',rc:'NR',pu:'NR',s:'Fadimatou et al. (2024), AJB2T',doi:'10.9734/ajb2t/2024/v10i2205',c:'Reported range',k:'base'},
+{f:'Sesame (per source; confirm form)',t:'None (baseline antinutrients)',T:'NR',tm:'NR',ph:'NR',sl:'NR',i:'Phytates 0.08–0.12 mg/100 g DM',fi:'NR',rm:'NR',rc:'NR',pu:'NR',s:'Fadimatou et al. (2024), AJB2T',doi:'10.9734/ajb2t/2024/v10i2205',c:'Reported range (verify units in paper)',k:'base'},
+{f:'Sesame (per source; confirm form)',t:'None (baseline antinutrients)',T:'NR',tm:'NR',ph:'NR',sl:'NR',i:'Saponins 0.084–1.10 mg/100 g DM',fi:'NR',rm:'NR',rc:'NR',pu:'NR',s:'Fadimatou et al. (2024), AJB2T',doi:'10.9734/ajb2t/2024/v10i2205',c:'Reported range',k:'base'},
+{f:'Sesame (per source; confirm form)',t:'None (baseline antinutrients)',T:'NR',tm:'NR',ph:'NR',sl:'NR',i:'Tannins 0.33–1.36 mg/100 g DM',fi:'NR',rm:'NR',rc:'NR',pu:'NR',s:'Fadimatou et al. (2024), AJB2T',doi:'10.9734/ajb2t/2024/v10i2205',c:'Reported range',k:'base'},
+{f:'Sesame (per source; confirm form)',t:'Pretreatment (type/conditions NR in current dataset)',T:'NR',tm:'NR',ph:'NR',sl:'NR',i:'Tannins',fi:'NR',rm:'40.07',rc:'NR',pu:'NR',s:'Fadimatou et al. (2024), AJB2T',doi:'10.9734/ajb2t/2024/v10i2205',c:'Result specific to that paper’s pretreatment; not a universal efficiency',k:'pre'},
+{f:'Sesame (per source; confirm form)',t:'Pretreatment (type/conditions NR in current dataset)',T:'NR',tm:'NR',ph:'NR',sl:'NR',i:'Phytates',fi:'NR',rm:'83.33',rc:'NR',pu:'NR',s:'Fadimatou et al. (2024), AJB2T',doi:'10.9734/ajb2t/2024/v10i2205',c:'Result specific to that paper’s pretreatment; not a universal efficiency',k:'pre'},
+{f:'Sesame (per source; confirm form)',t:'Pretreatment (type/conditions NR in current dataset)',T:'NR',tm:'NR',ph:'NR',sl:'NR',i:'Oxalates',fi:'NR',rm:'64.64',rc:'NR',pu:'NR',s:'Fadimatou et al. (2024), AJB2T',doi:'10.9734/ajb2t/2024/v10i2205',c:'Result specific to that paper’s pretreatment; not a universal efficiency',k:'pre'},
+{f:'Sesame (per source; confirm form)',t:'Pretreatment (type/conditions NR in current dataset)',T:'NR',tm:'NR',ph:'NR',sl:'NR',i:'Saponins',fi:'NR',rm:'60.95',rc:'NR',pu:'NR',s:'Fadimatou et al. (2024), AJB2T',doi:'10.9734/ajb2t/2024/v10i2205',c:'Result specific to that paper’s pretreatment; not a universal efficiency',k:'pre'},
+{f:'Sesame (per source; confirm form)',t:'Ultrasound',kk:'Ultrasound',T:'NR',tm:'NR',ph:'NR',sl:'NR',i:'NR',fi:'NR',rm:'NR',rc:'22.24 (without UPT)',pu:'54.08 (without UPT)',s:'Yang et al. (2021), Food Res. Int.',doi:'10.1016/j.foodres.2020.109907',c:'Control without ultrasound pretreatment. EAA 22.48%, NEAA 37.48%',k:'us'},
+{f:'Sesame (per source; confirm form)',t:'Ultrasound',kk:'Ultrasound',T:'NR',tm:'NR',ph:'NR',sl:'NR',i:'NR',fi:'NR',rm:'NR',rc:'25.95 (with UPT)',pu:'55.43 (with UPT)',s:'Yang et al. (2021), Food Res. Int.',doi:'10.1016/j.foodres.2020.109907',c:'Ultrasound pretreatment (UPT): yield significantly increased; purity and amino-acid measures not significantly influenced. EAA 23.10%, NEAA 36.54%',k:'us'},
+{f:'Sesame seed cake',t:'Thermal',T:'80–200',tm:'20–60',ph:'NR',sl:'NR',i:'Phytate, oxalate',fi:'NR',rm:'NR',rc:'NR',pu:'NR',s:'Malaviya et al. (2021), J. Food Process. Preserv.',doi:'10.1111/jfpp.15850',c:'Experimental design range',k:'th'},
+{f:'Sesame seed cake',t:'Thermal',T:'82.81',tm:'20',ph:'NR',sl:'NR',i:'Phytate, oxalate',fi:'NR',rm:'NR',rc:'NR',pu:'NR',s:'Malaviya et al. (2021), J. Food Process. Preserv.',doi:'10.1111/jfpp.15850',c:'Reported optimum (minimise phytate & oxalate; maximise antioxidant / oil yield; desirable colour). Literature optimum, not universal',k:'th'},
+{f:'Sesame cake',t:'Steam explosion',T:'NR',tm:'NR',ph:'NR',sl:'NR',i:'Phytate',fi:'NR',rm:'NR in current evidence dataset',rc:'NR in current evidence dataset',pu:'NR',s:'Li et al. (2023), Ind. Crops Prod.',doi:'10.1016/j.indcrop.2023.117697',c:'Reported effects: phytate degradation; enhanced sesame protein extraction; modified protein structure; modified lignan profiles',k:'se'},
+{f:'Defatted white sesame press cake',t:'Ultrasonication / fermentation / acidification (comparison)',T:'NR',tm:'NR',ph:'NR',sl:'NR',i:'NR',fi:'NR',rm:'NR',rc:'Up to 40.1 (cited study conditions)',pu:'NR',s:'Sushmithasri, Shetty & Rawson (2026), LWT',doi:'10.1016/j.lwt.2026.119850',c:'Study-wide maximum across compared pretreatments; attribution to a single treatment NR here. WHC 4.39 g/g; OHC 3.81 g/g; DPPH up to 84.13%; in-vitro digestibility 94.4%',k:'cmp'}
+];
+const EVDB=[
+['Ultrasound','Protein extraction 22.24 → 25.95%; purity 54.08 → 55.43%','medium','exp'],
+['Thermal','80–200 °C; 20–60 min; reported optimum 82.81 °C / 20 min','medium','exp'],
+['Steam explosion','Phytate degradation + enhanced protein extraction · quantitative value: NR in current evidence dataset','low','exp'],
+['Fermentation','Up to 40.1% protein recovery reported under the cited study conditions · Sushmithasri, Shetty & Rawson (2026), LWT (DOI 10.1016/j.lwt.2026.119850). Not a universal fermentation recovery.','medium','exp'],
+['Acidification','Studied in the 2026 sesame paper · quantitative value: NR in current evidence dataset','low','exp'],
+['Combined treatment','No exact combination validated yet','model','mod'],
+['Prototype recovery 82–86%','No verified source established','model','red']
+];
+const TIER={high:['HIGH','cf-high'],medium:['MEDIUM','cf-med'],low:['LOW','cf-low'],transferred:['TRANSFERRED','cf-trans'],model:['MODEL ONLY','cf-model']};
+const cf=t=>'<span class="cf '+TIER[t][1]+'">'+TIER[t][0]+'</span>';
+const EVK={
+ enzyme:{name:'Enzyme + controlled hydration',tier:'model',n:0},
+ wash:{name:'Washing / aqueous extraction',tier:'model',n:0},
+ ferment:{name:'Controlled fermentation',tier:'medium',n:1,quant:'Up to 40.1% protein recovery reported under the cited study conditions (study-wide maximum)',rows:[['Protein recovery','Up to 40.1% (cited study conditions)'],['Water-holding capacity','4.39 g/g'],['Oil-holding capacity','3.81 g/g'],['DPPH scavenging','up to 84.13%'],['In-vitro digestibility','94.4%']],src:'Sushmithasri R., Shetty P., Rawson A. (2026), LWT',doi:'10.1016/j.lwt.2026.119850',why:'One direct sesame study compared fermentation with ultrasonication and acidification, but the 40.1% figure is a study-wide maximum under its own conditions, not a universal fermentation recovery.'},
+ ultrasound:{name:'Ultrasound-assisted processing',tier:'medium',n:1,quant:'Protein extraction yield 22.24% → 25.95%',rows:[['Protein extraction yield','22.24% → 25.95%'],['Protein purity','54.08% → 55.43% (not significantly influenced)'],['Essential amino acids','22.48% → 23.10% (not significantly influenced)'],['Non-essential amino acids','37.48% → 36.54% (not significantly influenced)']],src:'Yang et al. (2021), Food Research International',doi:'10.1016/j.foodres.2020.109907',why:'Direct experimental evidence exists, but the evidence base is currently limited (one study).'},
+ combined:{name:'Combined staged treatment',tier:'model',n:0}
+};
+const SHORT={'Enzyme (phytase)':'enzyme','Washing':'wash','Fermentation':'ferment','Ultrasound':'ultrasound','Combined':'combined'};
+const RELATED=['Groundnut cake','Almond cake'];
+EVK.ferment.bm='Up to 40.1% protein recovery reported under the cited study conditions';EVK.ferment.ref='Sushmithasri et al., 2026';
+EVK.ultrasound.bm='22.24% → 25.95% extraction';EVK.ultrasound.ref='Yang et al., 2021';
+const SHN={enzyme:'Enzyme (phytase)',wash:'Washing',ferment:'Fermentation',ultrasound:'Ultrasound',combined:'Combined staged treatment'};
+const g=id=>document.getElementById(id);
+const doiA=d=>'<a href="https://doi.org/'+d+'" target="_blank" rel="noopener">'+d+'</a>';
+const B={exp:'<span class="ev ev-exp">🟢 EXPERIMENTAL</span>',mod:'<span class="ev ev-mod">🔵 MODEL PREDICTION</span>',asm:'<span class="ev ev-mod">🔵 MODEL / ASSUMPTION</span>',modS:'<span class="ev ev-mod">🔵 MODEL</span>',usr:'<span class="ev ev-usr">🟠 USER INPUT</span>',nr:'<span class="ev ev-nr">⚪ NR</span>'};
+function st(){const feed=g('feedstock').value;return{feed,sesame:feed==='Sesame press-cake',related:RELATED.indexOf(feed)>-1}}
+function tierOf(k){const s=st(),e=EVK[k];if(s.sesame)return e.tier;if(e.n>0&&s.related)return 'transferred';return 'model'}
+function directOf(k){return st().sesame&&EVK[k].n>0}
+
+/* ---------- labels ---------- */
+function tagMetric(id,kind){const el=g(id);if(!el)return;const m=el.classList.contains('metric')?el:el.closest('.metric');if(!m)return;const l=m.nextElementSibling;if(l&&!l.dataset.ev){l.insertAdjacentHTML('beforeend',B[kind]);l.dataset.ev=1}}
+function tagRow(id,kind){const el=g(id);if(!el)return;const td=el.closest('tr').firstElementChild;if(td&&!td.dataset.ev){td.insertAdjacentHTML('beforeend',B[kind]);td.dataset.ev=1}}
+function tailTag(el,html){if(el&&!el.querySelector('.ev-tail'))el.insertAdjacentHTML('beforeend','<div class="tailrow">'+html.replace('class="ev ','class="ev ev-tail ')+'</div>')}
+function tagDynamic(){
+ const M_=B.mod,A_=B.asm;
+ ['recBanner','whyText','massCard','cmpNote'].forEach(i=>tailTag(g(i),i==='whyText'||i==='recBanner'?M_:A_));
+ const dg=g('diagnosisText');if(dg)tailTag(dg.parentElement,A_);
+ const fn=g('feasNext');if(fn)tailTag(fn.parentElement,M_);
+ const er=g('experimentReason');if(er)tailTag(er.parentElement,M_);
+ const cd=g('cpDiff');if(cd)tailTag(cd.parentElement,M_);
+ document.querySelectorAll('#decCons .compound small').forEach(sm=>{if(sm.querySelector('.ev'))return;const nm=sm.previousElementSibling?sm.previousElementSibling.textContent:'';sm.insertAdjacentHTML('beforeend',' '+(/Safety/.test(nm)?B.usr:B.modS))});
+ document.querySelectorAll('#feasBreakdown .compound small').forEach(sm=>{if(!sm.querySelector('.ev'))sm.insertAdjacentHTML('beforeend',' '+B.modS)});
+ document.querySelectorAll('#sensRows .compound small').forEach(sm=>{if(!sm.querySelector('.ev'))sm.insertAdjacentHTML('beforeend',' '+B.modS)});
+ document.querySelectorAll('#optOut tr td:nth-child(2)').forEach(td=>{if(!td.querySelector('.ev'))td.insertAdjacentHTML('beforeend',' '+B.asm)});
+ document.querySelectorAll('#sensorySummary .metric-label').forEach(l=>{if(!l.querySelector('.ev'))l.insertAdjacentHTML('beforeend',B.asm)});
+ ['sensoryBefore','sensoryAfter'].forEach(i=>{const h=g(i)&&g(i).previousElementSibling;if(h&&!h.querySelector('.ev'))h.insertAdjacentHTML('beforeend',B.asm)});
+}
+function tagLabels(){tagDynamic();
+ ['outProtein','outRecovery','outWater','outEnergy','outRemoval','outSel','outTime','outTxCost'].forEach(i=>tagMetric(i,'asm'));
+ ['kpi-protein','kpi-cost','feasScore','proteinAdjusted','upCost','kpi-bottleneck'].forEach(i=>tagMetric(i,'mod'));
+ ['peaCPPDisplay','peaCostDisplay'].forEach(i=>tagMetric(i,'usr'));
+ ['tUpProtein','tUpCost','tUpCP','tPeaCP'].forEach(i=>tagRow(i,'mod'));
+ ['tPeaProtein','tPeaCost'].forEach(i=>tagRow(i,'usr'));
+ ['tWater','tEnergy','tTime','tTxCost'].forEach(i=>tagRow(i,'asm'));
+ ['pv2_phen_pred','pv2_prot_pred','pv2_rec_pred','pv2_sens_pred'].forEach(i=>tagRow(i,'mod'));
+ document.querySelectorAll('#page-analysis .field label,#page-treatment .field label,#page-compare .field label,#page-overview .field label').forEach(l=>{if(!l.dataset.ev){l.insertAdjacentHTML('beforeend',B.usr);l.dataset.ev=1}});
+ document.querySelectorAll('#page-treatment table thead th').forEach(th=>{if(th.dataset.ev)return;const t=th.textContent;if(/Compound removal|Protein recovery|Cost|Selectivity|Fit score/.test(t)&&th.closest('table').querySelector('#rankRows')){th.insertAdjacentHTML('beforeend',B.modS);th.dataset.ev=1}});
+ const hs={'What would change my decision?':'mod','Why this treatment?':'asm','Limiting-compound map':'asm','Score breakdown':'mod','Expected outcomes & trade-offs':'asm','Treatment comparison':'asm','Treatment parameter optimizer':'asm','Cost per kg protein delivered':'mod','Scenario sensory estimate':'mod'};
+ document.querySelectorAll('h2').forEach(h=>{const t=h.firstChild?h.firstChild.textContent.trim():'';if(hs[t]&&!h.dataset.ev){h.insertAdjacentHTML('beforeend',B[hs[t]]);h.dataset.ev=1}});
+ document.querySelectorAll('#decFacts .metric-label,#whyFacts .metric-label').forEach(l=>{if(l.dataset.ev)return;const t=l.textContent;l.insertAdjacentHTML('beforeend',/Safety gate/.test(t)?B.usr:/Evidence confidence/.test(t)?'<span class="ev ev-red">LEGACY HEURISTIC · deprecated</span>':B.modS);l.dataset.ev=1});
+ document.querySelectorAll('#rankRows tr,#cmpChart b').forEach(el=>{
+  const host=el.tagName==='TR'?el.children[1]:el.parentElement;const nameEl=el.tagName==='TR'?el.querySelector('b'):el;if(!nameEl||host.querySelector('.cf'))return;
+  const k=SHORT[nameEl.textContent.trim()];if(!k)return;
+  host.insertAdjacentHTML('beforeend',' '+cf(tierOf(k))+(k==='combined'?' <span class="ev ev-mod">MODEL-PROPOSED · requires validation</span>':''))});
+}
+
+/* ---------- evidence page ---------- */
+function renderStatic(){
+ (g('evFlow')||{}).innerHTML=[['Literature data','curated rows, source + DOI'],['Evidence retrieval','filters by feedstock / treatment'],['Experimental observations','Literature Evidence Dataset'],['Reasoning layer','literature evidence + rule-based reasoning (ML not yet trained)'],['Uncertainty','not quantified; sensory ±1.0 is assumed'],['Treatment ranking','engine rank + evidence tier'],['Next experiment','benchmarked to literature']].map((x,i,a)=>'<div class="st"><b>'+x[0]+'</b>'+x[1]+'</div>'+(i<a.length-1?'<div class="ar">→</div>':'')).join('');
+ g('evDbRows').innerHTML=EVDB.map(r=>{const bad=r[3]==='red';return '<tr><td><b'+(bad?' class="strike"':'')+'>'+r[0]+'</b></td><td'+(bad?' class="strike"':'')+'>'+r[1]+'</td><td>'+cf(r[2])+'</td><td>'+(r[3]==='exp'?'<span class="ev ev-exp" style="margin:0">🟢 Experimental</span>':r[3]==='mod'?'<span class="ev ev-mod" style="margin:0">🟡 Model-proposed</span>':'<span class="ev ev-red" style="margin:0">🔴 Remove</span>')+'</td></tr>'}).join('');
+ const ts=[...new Set(EVD.map(r=>r.t))];g('evFilter').innerHTML='<option value="">All treatments ('+EVD.length+' rows)</option>'+ts.map(t=>'<option>'+t+'</option>').join('');
+ evRenderDataset()}
+window.evRenderDataset=function(){const f=g('evFilter').value;const rows=EVD.filter(r=>!f||r.t===f);g('evCount').textContent=rows.length;
+ const c=v=>v==='NR'||/^NR in/.test(v)?v:(/\d/.test(v)?v+' <span class="ev ev-exp" style="margin-left:4px">EXPERIMENTAL</span>':v);
+ g('evDataRows').innerHTML=rows.map(r=>'<tr><td>'+r.f+'</td><td><b>'+r.t+'</b></td><td class="nw">'+c(r.T)+'</td><td class="nw">'+c(r.tm)+'</td><td>'+c(r.ph)+'</td><td>'+c(r.sl)+'</td><td>'+c(r.i)+'</td><td>'+c(r.fi)+'</td><td class="nw">'+c(r.rm)+'</td><td class="nw">'+c(r.rc)+'</td><td class="nw">'+c(r.pu)+'</td><td>'+r.s+'</td><td class="nw">'+doiA(r.doi)+'</td><td>'+r.c+'</td></tr>').join('')};
+
+/* ---------- actions ---------- */
+window.evUseLitProtein=function(){if(g('feedstock').value!=='Sesame press-cake'){g('evUseMsg').textContent='Literature value applies to sesame press cake only; select it first.';return}g('rawProtein').value=40.74;updateAll();g('evUseMsg').textContent='Raw protein set to 40.74 (Li et al., 2023, % DM).'};
+window.evLoadThermal=function(){g('opTemp').value=82.81;g('opTime').value=20;updateAll()};
+
+/* ---------- live panels ---------- */
+function parsePct(rowLabel){const rows=document.querySelectorAll('#optOut tr');for(const r of rows){if(r.children[0].textContent.trim()===rowLabel){const n=parseFloat(r.children[1].textContent);return Number.isFinite(n)?n:NaN}}return NaN}
+function paRows(){return[['rec',window.pvPred?window.pvPred.rec:NaN],['phy',parsePct('Phytate reduction')],['pur',window.pvPred?window.pvPred.prot:NaN]]}
+function labEntered(){const ids=['pa_rec_act','pa_phy_act','pa_pur_act','pv2_phen_lab','pv2_prot_lab','pv2_rec_lab','pv2_sens_lab'];return ids.some(i=>{const e=g(i);return e&&e.value!==''&&Number.isFinite(parseFloat(e.value))})}
+function renderPA(){let s=0,sb=0,n=0;paRows().forEach(([k,p])=>{g('pa_'+k+'_pred').innerHTML=(Number.isFinite(p)?p.toFixed(1)+'%':'—')+B.mod;const raw=g('pa_'+k+'_act').value,a=parseFloat(raw);
+  if(raw!==''&&Number.isFinite(a)&&Number.isFinite(p)&&p!==0){const ab=Math.abs(a-p),rel=ab/Math.abs(p)*100,b=a-p;g('pa_'+k+'_abs').textContent=ab.toFixed(2)+' pts';g('pa_'+k+'_rel').textContent=rel.toFixed(1)+'%';g('pa_'+k+'_bias').textContent=(b>=0?'+':'')+b.toFixed(2)+' pts';s+=rel;sb+=b;n++}else{['abs','rel','bias'].forEach(x=>g('pa_'+k+'_'+x).textContent='—')}});
+ g('pa_mape').textContent=n?(s/n).toFixed(1)+'%':'—';g('pa_bias').textContent=n?((sb/n>=0?'+':'')+(sb/n).toFixed(2)):'—';g('pa_n').textContent=n+' / 3';
+ g('pa_update').textContent=n?'Logged '+n+' observation'+(n>1?'s':'')+'. Mean bias '+(sb/n>=0?'over':'under')+'-predicts by '+Math.abs(sb/n).toFixed(2)+' points: add these runs to the Literature Evidence Dataset as new rows (condition, source = your lab) before any recalibration. Nothing is applied automatically.':'No lab data entered: the decision cannot be upgraded beyond VALIDATE until at least one actual is recorded.'}
+function renderTreatRows(){(g('evTreatRows')||{}).innerHTML=Object.keys(EVK).map(k=>{const e=EVK[k],t=tierOf(k),d=directOf(k);return '<tr><td><b>'+e.name+'</b></td><td>'+(d?'<b>YES</b> · '+e.quant+'<br><span class="sub">Source: '+e.src+' · DOI '+doiA(e.doi)+'</span>':(t==='transferred'?'No direct evidence; sesame study transferred from a related by-product':'<b>NO</b> · no direct experimental evidence in current dataset'))+'</td><td>'+cf(t)+'</td><td>'+(k==='combined'?'<span class="ev ev-mod" style="margin:0">🔵 Model-proposed combination · requires validation</span>':(t==='model'?'<span class="ev ev-mod" style="margin:0">🔵 MODEL PREDICTION only</span>':'<span class="ev ev-exp" style="margin:0">🟢 Experimental evidence</span>'))+'</td></tr>'}).join('');
+ (g('evCombinedWarn')||{}).innerHTML=g('pathway').value==='combined'?'<div class="warnbox"><b>Model-proposed combination — requires validation.</b> No paper in the evidence dataset tested this exact combined process, and single-treatment efficiencies are not summed to infer it. If a judge asks for the paper, there is none yet; the first step is an experiment.</div>':''}
+function traceBox(k){const e=EVK[k],t=tierOf(k),d=directOf(k),tr=t==='transferred',has=d||tr;
+ const evTxt=d?'Experimental '+B.exp:(tr?'Experimental, transferred from sesame (related by-product) '+B.exp:'Model prediction — no direct experimental evidence '+B.mod);
+ const bm=has?(tr?'Sesame benchmark: ':'')+'<b>'+e.bm+'</b> '+B.exp:'<b>NR</b> '+B.nr;
+ const src=has?e.ref+' · DOI '+doiA(e.doi):'<b>NR</b> '+B.nr;
+ return '<div class="'+(has?'okbox':'warnbox')+'" style="margin-top:12px"><b>Why this recommendation? (traceable)</b><div class="kv"><span>Recommended</span><span><b>'+SHN[k]+'</b> '+B.mod+'</span><span>Literature benchmark</span><span>'+bm+'</span><span>Evidence</span><span>'+evTxt+'</span><span>Confidence</span><span>'+cf(t)+'</span><span>Source</span><span>'+src+'</span></div></div>'}
+function renderTrace(){const rowsEl=document.querySelector('#rankRows tr b');const k=rowsEl?SHORT[rowsEl.textContent.trim()]:null;if(!k){(g('evTrace')||{}).innerHTML='';g('evRecTrace').innerHTML='';return}g('evRecTrace').innerHTML=traceBox(k);const e=EVK[k],t=tierOf(k),d=directOf(k);
+ let h='<div class="kv"><span>Engine recommendation</span><span><b>'+e.name+'</b> '+B.mod+'</span><span>Supporting experimental evidence</span><span>'+(d?'1 direct sesame study':(t==='transferred'?'0 direct; 1 transferred from sesame':'0 direct studies in current dataset'))+'</span>';
+ if(d||t==='transferred'){e.rows.forEach(r=>{h+='<span>'+r[0]+'</span><span><b>'+r[1]+'</b> '+B.exp+'</span>'});h+='<span>Source</span><span>'+e.src+'</span><span>DOI</span><span>'+doiA(e.doi)+'</span>'}
+ h+='<span>Confidence</span><span>'+cf(t)+'</span><span>Reason</span><span>'+((d||t==='transferred')?e.why+(t==='transferred'?' Evidence is from a different but related by-product.':''):'The ranking is produced by the rule-based engine from assumed effectiveness values. There is no direct experimental evidence behind this pathway for the selected feedstock, so it must be validated experimentally.')+'</span></div>';
+ const best=['ultrasound','ferment'].filter(x=>directOf(x))[0];
+ if(best&&best!==k)h+='<div class="okbox"><b>Strongest direct evidence in the database: '+EVK[best].name+'</b> ('+EVK[best].quant+'). It differs from the engine\'s top-ranked pathway; consider validating it first.</div>';
+ (g('evTrace')||{}).innerHTML=h}
+function renderThermal(){if(!g('evThNow'))return;const T=Number(g('opTemp').value),M=Number(g('opTime').value);g('evThNow').textContent=T+' °C · '+M+' min';const okT=T>=80&&T<=200,okM=M>=20&&M<=60;g('evThCheck').textContent=(okT&&okM)?'Inside the literature experimental range.':'Outside the literature experimental range ('+[okT?'':'temperature',okM?'':'time'].filter(Boolean).join(' and ')+').'}
+function renderDecision(){const s=st(),pathway=g('pathway').value,e=EVK[pathway],t=tierOf(pathway),d=directOf(pathway),safety=g('safetyStatus').value,lab=labEntered();
+ const raw=(g('decTier').textContent||'');const orig=/GO TO PILOT/.test(raw)?'GO':/REJECT/.test(raw)?'REJECT':'VALIDATE';
+ let final='VALIDATE',why;
+ if(safety==='fail'||orig==='REJECT'){final='REJECT';why=safety==='fail'?'The safety gate failed: do not proceed regardless of any evidence.':'The scenario does not meet the protein, sensory, cost or safety constraints, or the model score is too low; direct evidence does not override that.'}
+ else if(orig==='GO'&&t==='high'&&safety==='pass'&&lab){final='GO';why='Multiple experimental papers support this treatment on this feedstock, safety is passed, and laboratory results are recorded.'}
+ else{why=(d?'Direct experimental evidence supports '+e.quant.toLowerCase()+', but the proposed operating conditions and final food-safety suitability require laboratory validation.':'There is no direct experimental evidence for this pathway on the selected feedstock, so the result is a model prediction that requires laboratory validation before any decision.')+(lab?'':' No laboratory result has been entered yet.')}
+ const map={GO:['🟢 GO','var(--green)'],VALIDATE:['🟡 VALIDATE','var(--amber)'],REJECT:['🔴 REJECT','var(--red)']};
+ const quant=pathway==='ultrasound'&&d?'25.95% protein extraction yield (Yang et al., 2021) '+B.exp:pathway==='ferment'&&d?'Up to 40.1% protein recovery reported under the cited study conditions (Sushmithasri et al., 2026) '+B.exp:'NR '+B.nr;
+ g('evDecision').innerHTML='<div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center"><div style="font-size:28px;font-weight:900;color:'+map[final][1]+'">'+map[final][0]+'</div><div class="sub" style="flex:1;min-width:240px">'+why+'</div></div>'+
+  '<div class="grid g4" style="margin-top:14px"><div><div class="metric-label">Treatment</div><b>'+e.name+'</b>'+(pathway==='combined'?'<div><span class="ev ev-mod" style="margin:0">MODEL-PROPOSED · requires validation</span></div>':'')+'</div><div><div class="metric-label">Evidence</div>'+cf(t)+'</div><div><div class="metric-label">Experimental protein result</div><b>'+quant+'</b></div><div><div class="metric-label">Direct evidence for this feedstock</div><b>'+(d?'YES':'NO')+'</b>'+(s.sesame?'':'<div class="sub">'+s.feed+' selected; evidence dataset covers sesame</div>')+'</div></div>'+
+  '<div class="grid g4" style="margin-top:12px"><div><div class="metric-label">Prediction uncertainty</div><b>Not quantified</b><div class="sub">rule-based model; sensory ±1.0 is assumed</div></div><div><div class="metric-label">Safety</div><b>'+(safety==='pass'?'Completed and passed':safety==='fail'?'Failed':safety==='partial'?'Partially completed':'Not experimentally assessed')+'</b></div><div><div class="metric-label">Laboratory validation</div><b>'+(lab?'Entered':'None yet')+'</b></div></div>'+
+  (pathway==='combined'?'<div class="warnbox"><b>Model-proposed combination.</b> No paper tested this exact combined process; efficiencies are not combined mathematically to claim a result.</div>':'')}
+
+function evPost(){try{tagLabels();renderTreatRows();renderTrace();renderThermal();renderPA();renderDecision();document.querySelectorAll('#page-treatment .ev-mod').forEach(e=>e.remove());document.querySelectorAll('#page-treatment .tailrow').forEach(e=>{if(!e.children.length)e.remove()});g('evRawNow').textContent=g('rawProtein').value+'% (feedstock: '+g('feedstock').value+')'}catch(e){console.error('evidence layer',e)}}
+window.evPost=evPost;
+
+/* wrap original functions (originals unchanged) */
+const _u=window.updateAll;window.updateAll=function(){_u.apply(this,arguments);evPost()};
+const _pv=window.pvCalc;window.pvCalc=function(){_pv.apply(this,arguments);evPost()};
+const _sp=window.showPage;window.showPage=function(p){_sp(p);if(p==='evidence')g('crumb').textContent='Evidence database'};
+renderStatic();evPost();
+})();
+</script>
+
+<script>
+(function(){
+'use strict';
+const $=id=>document.getElementById(id);
+const C={g:'#147d64',g2:'#2c9b7c',b:'#2458a6',b2:'#6b97dc',a:'#e3a13c',r:'#d65e54',p:'#7a5bd6',t:'#18a0a8'};
+const TC={enzyme:C.g,wash:C.b,ferment:C.a,ultrasound:C.p,combined:C.r};
+const fin=v=>Number.isFinite(+v);const f0=v=>fin(v)?Number(v).toFixed(0):'—',f1=v=>fin(v)?Number(v).toFixed(1):'—',f2=v=>fin(v)?Number(v).toFixed(2):'—';
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+const clamp=(v,a,b)=>fin(v)?Math.max(a,Math.min(b,+v)):a;
+const col=v=>v>=70?C.g2:v>=40?'#e3b23c':C.r;
+const SHL={phytate:'Phytate',phenolics:'Phenolics',tannins:'Tannins',trypsin:'Trypsin inh.',saponins:'Saponins',oxalate:'Oxalate',flavour:'Off-flavour',fibre:'Fibre'};
+const SHT={enzyme:'Enzyme',wash:'Washing',ferment:'Fermentation',ultrasound:'Ultrasound',combined:'Combined'};
+
+/* ---------- primitives ---------- */
+const legend=a=>'<div class="legend">'+a.map(x=>'<span><i style="background:'+x[1]+'"></i>'+esc(x[0])+'</span>').join('')+'</div>';
+const card=(t,s,body,o)=>{o=o||{};return '<div class="card chartcard '+(o.cls||'')+'"><div class="ch-head"><div><h2>'+t+'</h2><p class="sub">'+(s||'')+'</p></div>'+(o.tag?'<span class="ch-tag '+(o.tc||'')+'">'+o.tag+'</span>':'')+'</div>'+body+(o.foot?'<p class="ch-foot">'+o.foot+'</p>':'')+'</div>'};
+const kpi=(ic,l,v,sub,c)=>'<div class="card kpi"><div class="kpi-ic" style="background:'+c+'1a;color:'+c+'">'+ic+'</div><div><div class="metric-label">'+l+'</div><div class="kpi-v">'+v+'</div><div class="kpi-s">'+sub+'</div></div></div>';
+const cu=(to,dec,pre,suf)=>'<span class="cu" data-to="'+to+'" data-dec="'+dec+'" data-pre="'+(pre||'')+'" data-suf="'+(suf||'')+'">'+(pre||'')+Number(to).toFixed(dec)+(suf||'')+'</span>';
+
+function vbars(cats,series,o){o=o||{};
+ const max=o.max||100,W=o.w||520,H=o.h||250,pl=36,pr=8,pt=20,pb=40,pw=W-pl-pr,ph=H-pt-pb,gw=pw/cats.length,bw=Math.min(30,gw*.76/series.length),dp=o.dec!=null?o.dec:(max<=10?1:0),unit=o.unit||'';
+ let s='<svg viewBox="0 0 '+W+' '+H+'" class="chart" role="img" aria-label="Chart">';
+ for(let i=0;i<=4;i++){const v=max*i/4,y=pt+ph-ph*i/4;s+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+y+'" y2="'+y+'" stroke="'+(i?'#edf1f5':'#cfd8e3')+'"/><text x="'+(pl-6)+'" y="'+(y+3)+'" text-anchor="end" font-size="9.5" fill="#8392a5">'+Number(v).toFixed(dp)+'</text>'}
+ if(o.ref!=null){const y=pt+ph-ph*o.ref/max;s+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+y+'" y2="'+y+'" stroke="'+C.r+'" stroke-dasharray="5 4"/><text x="'+(W-pr)+'" y="'+(y-4)+'" text-anchor="end" font-size="9.5" fill="'+C.r+'" font-weight="700">'+esc(o.refLabel||'')+'</text>'}
+ cats.forEach((c,i)=>{const gx=pl+gw*i+gw/2,tot=bw*series.length+(series.length-1)*3;
+  series.forEach((se,j)=>{const raw=se.vals[i],has=Number.isFinite(raw);if(!has){return}const v=clamp(raw,0,max),h=ph*v/max,x=gx-tot/2+j*(bw+3),y=pt+ph-h;
+   s+='<rect class="vb" x="'+x+'" y="'+y+'" width="'+bw+'" height="'+Math.max(h,0)+'" rx="4" fill="'+se.color+'" data-tip="'+esc(se.name+' · '+c+': '+Number(raw).toFixed(dp+(dp?0:1))+unit)+'"/>';
+   if(series.length<=3&&!o.noval&&cats.length<=6)s+='<text x="'+(x+bw/2)+'" y="'+(y-5)+'" text-anchor="middle" font-size="9.5" font-weight="700" fill="#344256">'+Number(raw).toFixed(dp)+'</text>'});
+  s+='<text x="'+gx+'" y="'+(H-pb+16)+'" text-anchor="middle" font-size="10.5" fill="#526174" font-weight="600">'+esc(c)+'</text>'});
+ return s+'</svg>'}
+
+function radar(labels,series){const W=340,H=300,cx=170,cy=150,R=84,n=labels.length;
+ const pt=(i,v)=>{const a=-Math.PI/2+2*Math.PI*i/n,r=R*v/100;return[cx+r*Math.cos(a),cy+r*Math.sin(a)]};
+ let s='<svg viewBox="0 0 '+W+' '+H+'" class="chart" role="img" aria-label="Chart">';
+ [25,50,75,100].forEach(g=>{s+='<polygon points="'+labels.map((_,i)=>pt(i,g).join(',')).join(' ')+'" fill="'+(g===100?'#f9fbfd':'none')+'" stroke="#e3e9f0"/>'});
+ labels.forEach((l,i)=>{const p=pt(i,100),q=pt(i,126);s+='<line x1="'+cx+'" y1="'+cy+'" x2="'+p[0]+'" y2="'+p[1]+'" stroke="#eef1f5"/>';const anc=Math.abs(q[0]-cx)<8?'middle':q[0]>cx?'start':'end';s+='<text x="'+q[0]+'" y="'+(q[1]+3)+'" text-anchor="'+anc+'" font-size="10" fill="#526174" font-weight="600">'+esc(l)+'</text>'});
+ series.forEach(se=>{const ps=se.vals.map((v,i)=>pt(i,Math.max(2,clamp(v,0,100))));s+='<polygon class="rad" points="'+ps.map(p=>p.join(',')).join(' ')+'" fill="'+se.color+'" fill-opacity="'+(se.fill!=null?se.fill:.16)+'" stroke="'+se.color+'" stroke-width="'+(se.sw||2)+'"/>';ps.forEach((p,i)=>{s+='<circle cx="'+p[0]+'" cy="'+p[1]+'" r="3.4" fill="#fff" stroke="'+se.color+'" stroke-width="2" data-tip="'+esc(se.name+' · '+labels[i]+': '+f0(se.vals[i]))+'"/>'})});
+ return s+'</svg>'}
+
+function ring(v,color,label,sub,max){max=max||100;const r=54,Cc=2*Math.PI*r,p=clamp(v/max,0,1);
+ return '<svg viewBox="0 0 140 140" class="ring"><circle cx="70" cy="70" r="'+r+'" fill="none" stroke="#edf1f5" stroke-width="13"/><circle class="ringfill" cx="70" cy="70" r="'+r+'" fill="none" stroke="'+color+'" stroke-width="13" stroke-linecap="round" stroke-dasharray="'+(Cc*p)+' '+Cc+'" transform="rotate(-90 70 70)"/><text x="70" y="70" text-anchor="middle" font-size="30" font-weight="800" fill="#182230">'+label+'</text><text x="70" y="88" text-anchor="middle" font-size="10" fill="#687586">'+sub+'</text></svg>'}
+
+function donut(parts,center,sub){const r=52,Cc=2*Math.PI*r,tot=parts.reduce((a,p)=>a+p.v,0)||1;let acc=0;
+ let s='<svg viewBox="0 0 140 140" class="ring"><circle cx="70" cy="70" r="'+r+'" fill="none" stroke="#edf1f5" stroke-width="16"/>';
+ parts.forEach(p=>{const len=Cc*p.v/tot;s+='<circle class="ringfill" cx="70" cy="70" r="'+r+'" fill="none" stroke="'+p.c+'" stroke-width="16" stroke-dasharray="'+Math.max(0,len-2.5)+' '+Cc+'" stroke-dashoffset="'+(-acc)+'" transform="rotate(-90 70 70)" data-tip="'+esc(p.l+': '+p.v)+'"/>';acc+=len});
+ return s+'<text x="70" y="70" text-anchor="middle" font-size="28" font-weight="800" fill="#182230">'+center+'</text><text x="70" y="87" text-anchor="middle" font-size="10" fill="#687586">'+sub+'</text></svg>'}
+
+function hbar(items,o){o=o||{};const max=o.max||100,fmt=o.fmt||(v=>f0(v)+'%');
+ return '<div class="hb">'+items.map(it=>'<div class="hb-row" data-tip="'+esc(it.tip||(it.l+': '+fmt(it.v)))+'"><span class="hb-l">'+esc(it.l)+'</span><div class="hb-t"><i style="width:'+clamp(it.v/max*100,1.5,100)+'%;background:'+(it.c||C.g2)+'"></i></div><b class="hb-v">'+fmt(it.v)+'</b></div>').join('')+'</div>'}
+
+function pts(items){return '<div class="hb">'+items.map(it=>{const ach=it.w*it.v/100;return '<div class="hb-row" data-tip="'+esc(it.l+': '+f1(ach)+' of '+it.w+' pts')+'"><span class="hb-l">'+esc(it.l)+'</span><div class="hb-t pt-t"><i style="width:'+(it.w/20*100)+'%;background:#dfe7ef"></i><i style="width:'+(ach/20*100)+'%;background:'+col(it.v)+'"></i></div><b class="hb-v">'+f1(ach)+'/'+it.w+'</b></div>'}).join('')+'</div>'}
+
+function stack(rows){const sum=r=>r.segs.reduce((a,s)=>a+s.v,0),mx=Math.max.apply(null,rows.map(sum));const names={};
+ const body=rows.map(r=>{const t=sum(r);r.segs.forEach(s=>names[s.l]=s.c);return '<div class="st-row"><div class="st-top"><b>'+esc(r.l)+'</b><span><b>₹'+f0(t)+'</b> / kg protein</span></div><div class="st-bar" style="width:'+Math.max(8,t/mx*100)+'%">'+r.segs.filter(s=>s.v>0).map(s=>'<i style="flex:'+s.v+';background:'+s.c+'" data-tip="'+esc(s.l+': ₹'+f1(s.v)+' per kg protein')+'"></i>').join('')+'</div></div>'}).join('');
+ return body+legend(Object.keys(names).map(k=>[k,names[k]]))}
+
+function tornado(items,center,o){o=o||{};const good=o.good||'high',fmt=o.fmt||f0;
+ const all=[center];items.forEach(i=>{all.push(i.lo,i.hi)});let a=Math.min.apply(null,all),b=Math.max.apply(null,all);const pad=(b-a)*.1||1;a-=pad;b+=pad;const P=v=>(v-a)/(b-a)*100;
+ const lowC=good==='high'?C.r:C.g2,highC=good==='high'?C.g2:C.r;
+ return '<div class="tn">'+items.map(i=>'<div class="tn-row" data-tip="'+esc(i.l+': '+fmt(i.lo)+' – '+fmt(i.hi))+'"><span class="hb-l">'+esc(i.l)+'</span><div class="tn-t"><i style="left:'+P(i.lo)+'%;width:'+Math.max(0,P(Math.min(center,i.hi))-P(i.lo))+'%;background:'+lowC+'"></i><i style="left:'+P(Math.max(center,i.lo))+'%;width:'+Math.max(0,P(i.hi)-P(Math.max(center,i.lo)))+'%;background:'+highC+'"></i><span class="tn-c" style="left:'+P(center)+'%"></span></div><b class="hb-v">'+fmt(i.lo)+' – '+fmt(i.hi)+'</b></div>').join('')+'</div><p class="ch-foot">Black line = current value ('+fmt(center)+'). Green moves the outcome in the favourable direction, red the other way.</p>'}
+
+function axes(W,H,pl,pr,pt,pb,x0,x1,y0,y1,fx,fy,xl,yl){const X=v=>pl+(v-x0)/(x1-x0)*(W-pl-pr),Y=v=>H-pb-(v-y0)/(y1-y0)*(H-pb-pt);let s='';
+ for(let i=0;i<=4;i++){const yv=y0+(y1-y0)*i/4,xv=x0+(x1-x0)*i/4;s+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+Y(yv)+'" y2="'+Y(yv)+'" stroke="'+(i?'#edf1f5':'#cfd8e3')+'"/><text x="'+(pl-7)+'" y="'+(Y(yv)+3)+'" text-anchor="end" font-size="9.5" fill="#8392a5">'+fy(yv)+'</text><text x="'+X(xv)+'" y="'+(H-pb+15)+'" text-anchor="middle" font-size="9.5" fill="#8392a5">'+fx(xv)+'</text>'}
+ s+='<text x="'+((pl+W-pr)/2)+'" y="'+(H-6)+'" text-anchor="middle" font-size="10.5" fill="#526174" font-weight="700">'+esc(xl)+'</text><text transform="translate(13 '+((pt+H-pb)/2)+') rotate(-90)" text-anchor="middle" font-size="10.5" fill="#526174" font-weight="700">'+esc(yl)+'</text>';
+ return{s:s,X:X,Y:Y}}
+
+function bubble(points,o){const W=520,H=310,A=axes(W,H,52,22,16,44,o.x0,o.x1,o.y0,o.y1,f0,f0,o.xl,o.yl);
+ let s='<svg viewBox="0 0 '+W+' '+H+'" class="chart" role="img" aria-label="Chart"><rect x="'+A.X(o.x0)+'" y="'+A.Y(o.y1)+'" width="'+(A.X((o.x0+o.x1)/2)-A.X(o.x0))+'" height="'+(A.Y((o.y0+o.y1)/2)-A.Y(o.y1))+'" fill="#e7f5ef" opacity=".7" rx="6"/><text x="'+(A.X(o.x0)+8)+'" y="'+(A.Y(o.y1)+15)+'" font-size="10" fill="#147d64" font-weight="800">IDEAL: high removal · low cost</text>'+A.s;
+ points.forEach(p=>{const x=A.X(p.x),y=A.Y(p.y);s+='<circle cx="'+x+'" cy="'+y+'" r="'+p.r+'" fill="'+p.c+'" fill-opacity="'+(p.sel?.85:.5)+'" stroke="'+p.c+'" stroke-width="'+(p.sel?3:1.5)+'" data-tip="'+esc(p.tip)+'"/><text x="'+x+'" y="'+(y-p.r-5)+'" text-anchor="'+(x>W-90?'end':'middle')+'" font-size="10.5" font-weight="700" fill="#344256">'+esc(p.l)+'</text>'});
+ return s+'</svg>'}
+
+function line(series,o){const W=520,H=290,A=axes(W,H,54,18,16,44,o.x0,o.x1,o.y0,o.y1,o.fx||f0,o.fy||f0,o.xl,o.yl);let s='<svg viewBox="0 0 '+W+' '+H+'" class="chart" role="img" aria-label="Chart">'+A.s;
+ series.forEach(se=>{const d=se.pts.map((p,i)=>(i?'L':'M')+A.X(p[0]).toFixed(1)+' '+A.Y(clamp(p[1],o.y0,o.y1)).toFixed(1)).join(' ');s+='<path class="lpath" d="'+d+'" fill="none" stroke="'+se.color+'" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"'+(se.dash?' stroke-dasharray="6 5"':'')+'/>'});
+ (o.marks||[]).forEach(m=>{const x=A.X(m.x),y=A.Y(clamp(m.y,o.y0,o.y1));s+='<circle cx="'+x+'" cy="'+y+'" r="6" fill="'+m.c+'" stroke="#fff" stroke-width="2.5" data-tip="'+esc(m.tip)+'"/><text x="'+x+'" y="'+(y-11)+'" text-anchor="middle" font-size="10.5" font-weight="800" fill="'+m.c+'">'+esc(m.l)+'</text>'});
+ return s+'</svg>'}
+
+function thermal(T,Mn){const W=520,H=300,A=axes(W,H,52,20,16,44,40,220,0,70,f0,f0,'Temperature (°C)','Hold time (min)');
+ let s='<svg viewBox="0 0 '+W+' '+H+'" class="chart" role="img" aria-label="Chart">'+A.s;
+ s+='<rect x="'+A.X(80)+'" y="'+A.Y(60)+'" width="'+(A.X(200)-A.X(80))+'" height="'+(A.Y(20)-A.Y(60))+'" fill="#2c9b7c" fill-opacity=".14" stroke="#2c9b7c" stroke-dasharray="5 4" rx="6" data-tip="Literature experimental range: 80–200 °C · 20–60 min"/><text x="'+(A.X(140))+'" y="'+(A.Y(40)+4)+'" text-anchor="middle" font-size="11" font-weight="800" fill="#147d64">Experimentally studied region</text>';
+ s+='<circle cx="'+A.X(82.81)+'" cy="'+A.Y(20)+'" r="7" fill="#147d64" stroke="#fff" stroke-width="2.5" data-tip="Reported optimum 82.81 °C × 20 min (Malaviya et al., 2021)"/><text x="'+(A.X(82.81)+11)+'" y="'+(A.Y(20)+16)+'" font-size="10.5" font-weight="800" fill="#147d64">Reported optimum</text>';
+ const inR=T>=80&&T<=200&&Mn>=20&&Mn<=60,cc=inR?C.g2:C.r;
+ s+='<circle cx="'+A.X(clamp(T,40,220))+'" cy="'+A.Y(clamp(Mn,0,70))+'" r="7" fill="'+cc+'" stroke="#fff" stroke-width="2.5" data-tip="Engine reference conditions: '+T+' °C · '+Mn+' min"/><text x="'+(A.X(clamp(T,40,220))+11)+'" y="'+(A.Y(clamp(Mn,0,70))+4)+'" font-size="10.5" font-weight="800" fill="'+cc+'">Engine default ('+T+' °C · '+Mn+' min)</text>';
+ return s+'</svg>'}
+
+/* ---------- model state (mirrors updateAll) ---------- */
+function S(){
+ const feed=val('feedstock'),rawP=Math.max(0,Math.min(100,num('rawProtein',38))),fibre=num('fibre',12);
+ const lcs=lcScores(fibre),ranked=lcRanked(lcs),top=ranked[0],evidence=lcEvidence(lcs),safety=val('safetyStatus');
+ const mraw=val('targetProtein').trim(),mnum=Number(mraw),measured=mraw!==''&&Number.isFinite(mnum)&&mnum>0;
+ const peaCost=num('peaCost',185),peaP=Math.max(1,num('peaProtein',80));
+ const ctx={rawP:rawP,rawCost:num('rawCost',12),proc:num('processCost',20),yieldF:Math.max(1,num('yieldPct',76))/100,extra:num('extraCost',0),measured:measured,mnum:Math.min(100,mnum),peaCost:peaCost,peaP:peaP,peaCPP:peaCost/(peaP/100),safety:safety,evidence:evidence};
+ const pathway=val('pathway'),pp=readParams();
+ const rows=Object.keys(TX).map(k=>evalPath(k,lcs,k===pathway?pp:null));
+ const M=model(lcs,pathway,pp,{},ctx),D=decide(M,ctx),SN=sens(lcs,pathway,pp,ctx,top.k,top.n);
+ return{feed:feed,rawP:rawP,lcs:lcs,ranked:ranked,top:top,ctx:ctx,pathway:pathway,pp:pp,rows:rows,sorted:rows.slice().sort((a,b)=>b.fit-a.fit),M:M,D:D,SN:SN,cur:M.c};
+}
+const tierInfo=t=>({GO:['GO TO PILOT',C.g],VALIDATE:['VALIDATE','#b87408'],REJECT:['REJECT / REDESIGN',C.r]})[t];
+function radarAxes(r){return[r.r*100,r.rec,clamp((1-r.cost/25)*100,0,100),r.res*100,clamp((1-r.time/720)*100,0,100)]}
+const RAX=['Removal','Recovery','Low cost','Low resources','Speed'];
+function costParts(s){const c=s.ctx,tp=s.M.targetP/100,y=c.yieldF;return[{l:'Raw material',v:c.rawCost/y/tp,c:'#6b97dc'},{l:'Processing',v:c.proc/y/tp,c:'#2458a6'},{l:'Treatment',v:s.cur.cost/y/tp,c:'#2c9b7c'},{l:'Other / overhead',v:c.extra/y/tp,c:'#e3a13c'}]}
+function costStack(s){const parts=costParts(s),dpea=(1-s.M.cpp/s.ctx.peaCPP)*100;
+ return stack([{l:'Upcycled '+s.feed.toLowerCase(),segs:parts},{l:'Imported pea isolate',segs:[{l:'Purchase price',v:s.ctx.peaCPP,c:'#9aa8b8'}]}])+'<div class="callout '+(dpea>=0?'':'warn')+'"><b>'+f0(Math.abs(dpea))+'% '+(dpea>=0?'lower':'higher')+'</b> cost per kg protein than imported pea isolate (₹'+f0(s.M.cpp)+' vs ₹'+f0(s.ctx.peaCPP)+').</div>'}
+function sensoryChart(M,o2){o2=o2||{};return vbars(['Bitterness','Beany flavour','Astringency','Acceptance'],[{name:'Before',color:'#e0a044',vals:[M.bit,M.beany,M.ast,M.accB]},{name:'After treatment',color:C.g2,vals:[M.bitA,M.beanyA,M.astA,M.accA]}],{max:10,dec:1,h:230,w:o2.w})+legend([['Before treatment','#e0a044'],['After (scenario)',C.g2]])}
+function profileRadar(s){const after=LC.map(x=>s.lcs[x.k].s*(1-(s.cur.eff[x.k]||0)));return radar(LC.map(x=>SHL[x.k]),[{name:'Before',color:C.r,vals:LC.map(x=>s.lcs[x.k].s),fill:.14},{name:'After '+SHT[s.pathway].toLowerCase(),color:C.g2,vals:after,fill:.22}])+legend([['Before treatment (limitation score)',C.r],['After selected treatment',C.g2]])}
+function allTxRadar(s){return radar(RAX,s.rows.map(r=>({name:SHT[r.k],color:TC[r.k],vals:radarAxes(r),fill:r.k===s.pathway?.2:.05,sw:r.k===s.pathway?3:1.6})))+legend(s.rows.map(r=>[SHT[r.k]+(r.k===s.pathway?' (selected)':''),TC[r.k]]))}
+const LIT_REDUCT=[{l:'Phytates',v:83.33,c:C.g2},{l:'Oxalates',v:64.64,c:C.b2},{l:'Saponins',v:60.95,c:C.a},{l:'Tannins',v:40.07,c:C.p}];
+const EVTIER=[{l:'Medium',v:3,c:C.b},{l:'Low',v:2,c:C.a},{l:'Model only',v:1,c:C.p}];
+
+/* ---------- pages ---------- */
+function pHome(s,anim){const M=s.M,D=s.D,ctx=s.ctx,ti=tierInfo(D.tier),dpea=(1-M.cpp/ctx.peaCPP)*100;
+ $('hxSub').textContent=s.feed+' · '+TX[s.pathway].name+' · '+(ctx.measured?'measured protein input':'modelled scenario');
+ $('hxFeed').value=s.feed;
+ $('hxKpis').innerHTML=
+  kpi('◈','Evidence-guided decision','<span style="color:'+ti[1]+'">'+ti[0]+'</span>','SmartCake score '+M.score+'/100 · safety: '+SAFEL[ctx.safety],ti[1])+
+  kpi('⚗','Ingredient protein',cu(M.protein,0,'','%'),(M.protein>=s.rawP?'+':'')+f0(M.protein-s.rawP)+' pts vs raw cake ('+f0(s.rawP)+'%) · modelled',C.g2)+
+  kpi('₹','Cost per kg protein','₹'+cu(M.cpp,0),'<b style="color:'+(dpea>=0?C.g:C.r)+'">'+f0(Math.abs(dpea))+'% '+(dpea>=0?'cheaper':'costlier')+'</b> than pea isolate (₹'+f0(ctx.peaCPP)+')',C.b)+
+  kpi('◉','Protein recovery',cu(s.cur.rec,0,'','%'),'mass retained · '+f0(s.cur.r*100)+'% weighted compound removal',C.a);
+ const chips=D.cons.map(c=>'<div class="chip-row"><span class="dot '+(c[1]===true?'d-ok':c[1]===false?'d-no':'d-pend')+'"></span><span>'+esc(c[0])+'</span><b>'+esc(c[2])+'</b></div>').join('');
+ const cmp=vbars(s.sorted.map(r=>SHT[r.k]),[{name:'Compound removal %',color:C.r,vals:s.sorted.map(r=>r.r*100)},{name:'Protein recovery %',color:C.g2,vals:s.sorted.map(r=>r.rec)},{name:'Fit score /100',color:C.b,vals:s.sorted.map(r=>r.fit)}],{h:262})+legend([['Compound removal',C.r],['Protein recovery',C.g2],['Fit score',C.b]]);
+ $('hxCharts').innerHTML=
+  card('Treatment comparison','Best overall ≠ highest removal — sorted by multi-objective fit score',cmp,{cls:'span2',tag:'Engine ranking',foot:'Recommended: <b>'+esc(s.sorted[0].name)+'</b> (fit '+s.sorted[0].fit+'/100). Selected pathway: <b>'+esc(TX[s.pathway].short)+'</b>.'})+
+  card('SmartCake score','Weighted decision score',ring(M.score,col(M.score),M.score,'/ 100 score')+'<div style="text-align:center"><span class="tierbadge" style="background:'+ti[1]+'1a;color:'+ti[1]+'">'+ti[0]+'</span></div><div style="margin-top:10px">'+chips+'</div>',{tag:'Decision'})+
+  card('Limiting-compound profile','Limitation score before vs after the selected treatment',profileRadar(s),{tag:'Diagnose'})+
+  card('Cost per kg protein','Equal-protein comparison with imported pea isolate',costStack(s),{tag:'Economics',tc:'g'})+
+  card('Sensory estimate','Scenario acceptance, needs blinded panel',sensoryChart(M,{w:340}),{tag:'Scenario',tc:'a'})+
+  card('Evidence strength','Confidence tier of the 6 treatments in the evidence database',donut(EVTIER,'6','treatments')+legend([['Medium · 3 treatments',C.b],['Low · 2',C.a],['Model only · 1',C.p]]),{tag:'Traceable',tc:'p',foot:'No treatment has HIGH confidence yet — more validated experiments are needed.'})+
+  card('Literature benchmarks · sesame','Reductions reported after the pretreatment in Fadimatou et al. (2024)',hbar(LIT_REDUCT)+'<div class="callout"><b>Ultrasound</b> raised extraction yield from <b>22.24% → 25.95%</b> (Yang et al., 2021).</div>',{cls:'span2',tag:'Experimental · cited',tc:'g',foot:'Paper-specific results — not universal treatment efficiencies, not used as engine factors.'})}
+
+function pOverview(s){const M=s.M;
+ const sw=s.SN.map(x=>({l:x.label.replace('Actual ','').replace(/^./,c=>c.toUpperCase()),lo:x.min,hi:x.max}));
+ $('ovCharts').innerHTML=
+  card('Score build-up','Points earned vs available per component',pts(M.comps.map(c=>({l:c[0].replace(' (scenario)',''),w:c[1],v:c[2]})))+'<div class="callout"><b>Total: '+M.score+' / 100</b> — safety is also a hard gate.</div>',{tag:'Why this score'})+
+  card('Decision sensitivity','Score range when each input moves ±20%',tornado(sw,M.score,{good:'high'}),{tag:'What would change it?',tc:'a'})+
+  card('Treatment trade-off radar','All five pathways across five objectives',allTxRadar(s),{tag:'Multi-objective',tc:'g'})}
+
+function pAnalysis(s){
+ const cats=LC.map(x=>SHL[x.k]);
+ const conc=LC.map(x=>{const r=Number($('lc_'+x.k+'_ref').value);return r>0?clamp(s.lcs[x.k].c/r*100,0,100):0});
+ $('anCharts').innerHTML=
+  card('Concentration vs limitation','% of reference level (capped) compared with the final limitation score',vbars(cats,[{name:'% of reference level',color:C.b2,vals:conc},{name:'Limitation score',color:C.r,vals:LC.map(x=>s.lcs[x.k].s)}],{h:260,noval:true})+legend([['Concentration (% of reference)',C.b2],['Limitation score',C.r]]),{tag:'Diagnose'})+
+  card('Severity vs evidence confidence','Where the data is strong — and where it still needs an assay',radar(cats,[{name:'Limitation score',color:C.r,vals:LC.map(x=>s.lcs[x.k].s)},{name:'Evidence confidence',color:C.b,vals:LC.map(x=>s.lcs[x.k].conf*s.lcs[x.k].f*100),fill:.12}])+legend([['Limitation score',C.r],['Evidence-weighted confidence',C.b]]),{tag:'Provenance',tc:'a'})}
+
+function pTreatment(s){
+ const pts_=s.rows.map(r=>({x:r.cost,y:r.r*100,r:7+(r.rec-60)/38*14,c:TC[r.k],l:SHT[r.k],sel:r.k===s.pathway,tip:SHT[r.k]+' · ₹'+f0(r.cost)+'/kg · removal '+f0(r.r*100)+'% · recovery '+f0(r.rec)+'% · fit '+r.fit}));
+ const xm=Math.max.apply(null,s.rows.map(r=>r.cost));
+ const mx=(k,u)=>Math.max.apply(null,s.rows.map(r=>r[k]));
+ const grp=(t,k,fmt)=>'<h3 style="margin:12px 0 0">'+t+'</h3>'+hbar(s.rows.map(r=>({l:SHT[r.k],v:r[k],c:TC[r.k]})),{max:mx(k),fmt:fmt});
+ const inP=s.rawP*10,rec=inP*s.cur.rec/100;
+ $('trCharts').innerHTML=
+  card('Cost vs removal','Bubble size = protein recovery · selected pathway outlined',bubble(pts_,{x0:0,x1:Math.ceil((xm+4)/5)*5,y0:0,y1:100,xl:'Treatment cost (₹/kg feedstock)',yl:'Weighted compound removal (%)'}),{tag:'Trade-off'})+
+  card('Treatment radar','Shape shows each pathway’s strengths',allTxRadar(s),{tag:'Multi-objective',tc:'g'})+
+  card('Resource & time profile','Water, energy and processing time per pathway',grp('Water use (L/kg)','water',v=>f0(v)+' L')+grp('Energy (MJ/kg)','energy',v=>f1(v))+grp('Processing time','time',fmtTime),{tag:'Assumptions',tc:'a'})+
+  card('Protein mass balance','Concentration can rise while mass is lost — track both',hbar([{l:'Protein in feed',v:inP,c:'#9aa8b8'},{l:'Recovered',v:rec,c:C.g2},{l:'Lost',v:inP-rec,c:C.r}],{max:inP||1,fmt:v=>f0(v)+' g'})+'<div class="minirow"><div class="mini"><b>'+f0(s.rawP)+'%</b><span>raw protein</span></div><div class="mini"><b>'+f0(s.M.protein)+'%</b><span>modelled ingredient</span></div><div class="mini"><b>'+f0(s.cur.rec)+'%</b><span>mass retained</span></div></div>',{tag:'Per kg feedstock',tc:'g'})}
+
+function cppWith(s,m){const c=s.ctx;return((c.rawCost*(m.raw||1)+c.proc*(m.proc||1)+s.cur.cost*(m.tx||1)+c.extra)/(c.yieldF*(m.y||1)))/(s.M.targetP*(m.p||1)/100)}
+function pCompare(s){
+ const base=s.M.cpp,defs=[['Raw material cost',{raw:1}],['Processing cost',{proc:1}],['Treatment cost',{tx:1}],['Ingredient yield',{y:1}],['Ingredient protein %',{p:1}]];
+ const items=defs.map(d=>{const k=Object.keys(d[1])[0],a={},b={};a[k]=.8;b[k]=1.2;const v1=cppWith(s,a),v2=cppWith(s,b);return{l:d[0],lo:Math.min(v1,v2),hi:Math.max(v1,v2)}}).sort((a,b)=>(b.hi-b.lo)-(a.hi-a.lo));
+ const sweep=[];for(let y=40;y<=100;y+=5)sweep.push([y,cppWith(s,{y:y/100/s.ctx.yieldF})]);
+ const yc=s.ctx.yieldF*100,ymax=Math.ceil(Math.max(sweep[0][1],s.ctx.peaCPP*1.15)/50)*50;
+ const be=base*s.ctx.peaP/100;
+ $('cpCharts').innerHTML=
+  card('Where the cost comes from','Per kg protein delivered, by cost component',costStack(s),{tag:'Cost stack',tc:'g'})+
+  card('Yield sweep','Cost per kg protein vs ingredient yield — break-even with pea isolate',line([{pts:sweep,color:C.b},{pts:[[40,s.ctx.peaCPP],[100,s.ctx.peaCPP]],color:'#9aa8b8',dash:true}],{x0:40,x1:100,y0:0,y1:ymax,xl:'Ingredient yield (%)',yl:'₹ per kg protein',fy:v=>'₹'+f0(v),marks:[{x:clamp(yc,40,100),y:base,c:C.g,l:'Now ₹'+f0(base),tip:'Current yield '+f0(yc)+'% → ₹'+f0(base)+'/kg protein'}]})+legend([['Upcycled ingredient',C.b],['Pea isolate (reference)','#9aa8b8']]),{tag:'Sensitivity'})+
+  card('Cost sensitivity','Cost per kg protein when each assumption moves ±20%',tornado(items,base,{good:'low',fmt:v=>'₹'+f0(v)}),{tag:'What drives cost?',tc:'a'})+
+  card('Sensory shift','Scenario estimate before vs after treatment',sensoryChart(s.M),{tag:'Scenario',tc:'a'})}
+
+function pExperiment(s){
+ const preds=[s.cur.rec,(s.cur.eff.phytate||0)*100,s.M.protein],ids=['pa_rec_act','pa_phy_act','pa_pur_act'];
+ const acts=ids.map(i=>{const e=$(i);return e&&e.value!==''?parseFloat(e.value):NaN});
+ const any=acts.some(Number.isFinite),mx=Math.max(10,Math.ceil(Math.max.apply(null,preds.concat(acts.filter(Number.isFinite)))/10)*10);
+ const sw=s.SN.map(x=>({l:x.label,v:x.swing,c:C.b}));
+ $('exCharts').innerHTML=
+  card('Prediction vs actual','Enter lab results above — bars update live',vbars(['Protein recovery','Phytate reduction','Ingredient protein'],[{name:'Predicted',color:C.b2,vals:preds},{name:'Actual (lab)',color:C.g2,vals:acts}],{max:mx,h:250,unit:' %',w:380})+legend([['Predicted (model)',C.b2],['Actual (your lab)',C.g2]]),{tag:any?'Live':'Awaiting lab data',tc:any?'g':'a',foot:any?'':'No actuals entered yet — the decision cannot move beyond VALIDATE.'})+
+  card('Which measurement matters most?','Score swing from a ±20% error in each input',hbar(sw,{max:Math.max.apply(null,sw.map(x=>x.v))||1,fmt:v=>f0(v)+' pts'})+'<div class="callout"><b>Measure first:</b> '+esc(s.SN[0].label.toLowerCase())+'.</div>',{tag:'Prioritise'})+
+  card('Literature target to reproduce','Ultrasound-assisted sesame protein extraction (Yang et al., 2021)',hbar([{l:'Without ultrasound',v:22.24,c:'#9aa8b8'},{l:'With ultrasound',v:25.95,c:C.g2}],{max:30,fmt:v=>f2(v)+'%'})+'<div class="callout">Benchmark: your lab run should land near <b>25.95%</b> extraction yield.</div>',{tag:'Experimental',tc:'g'})}
+
+function pEvidence(){
+ const T=Number($('opTemp').value),Mn=Number($('opTime').value);
+ $('evCharts').innerHTML=
+  card('Antinutrient reduction','Fadimatou et al. (2024) · pretreatment-specific',hbar(LIT_REDUCT),{tag:'Experimental',tc:'g',foot:'Not universal removal factors.'})+
+  card('Ultrasound effect','Yang et al. (2021) · extraction yield and purity',vbars(['Extraction yield','Protein purity'],[{name:'Without ultrasound',color:'#9aa8b8',vals:[22.24,54.08]},{name:'With ultrasound',color:C.g2,vals:[25.95,55.43]}],{max:60,dec:1,h:250,w:340})+legend([['Without UPT','#9aa8b8'],['With UPT',C.g2]]),{tag:'Experimental',tc:'g',foot:'Yield increase significant; purity not significantly changed.'})+
+  card('Evidence confidence','Treatments in the database by confidence tier',donut(EVTIER,'6','treatments')+legend([['Medium · Ultrasound, Thermal, Fermentation',C.b],['Low · Steam explosion, Acidification',C.a],['Model only · Combined',C.p]]),{tag:'Traceable',tc:'p'})+
+  card('Thermal processing region','Malaviya et al. (2021) vs the engine’s placeholder conditions',thermal(T,Mn),{tag:'Experimental',tc:'g',cls:'span2',foot:'Literature optimum applies only to the studied responses; the engine default sits outside the experimental range.'})+
+  card('Sesame composition & function','Li et al. (2023) and Sushmithasri et al. (2026)',hbar([{l:'Protein (% DM)',v:40.74,c:C.g2},{l:'Fat (% DM)',v:12.78,c:C.a},{l:'Digestibility (%)',v:94.4,c:C.b2},{l:'DPPH scavenging (%)',v:84.13,c:C.p}],{fmt:v=>f1(v)+'%'})+'<div class="minirow"><div class="mini"><b>4.39</b><span>WHC g/g</span></div><div class="mini"><b>3.81</b><span>OHC g/g</span></div><div class="mini"><b>≤40.1%</b><span>recovery (study max)</span></div></div>',{tag:'Experimental',tc:'g'})}
+
+function pFormula(){
+ const c=fcCur(),v={};let ok=true;c.inputs.forEach(i=>{const n=parseFloat($('fc_'+i[0]).value);v[i[0]]=n;if(!isFinite(n))ok=false});
+ if(!ok||(c.check&&c.check(v))){$('fcCharts').innerHTML=card('Result sensitivity','Visual analysis of the current calculation','<div class="notice">Enter valid inputs above to see sensitivity and response curves.</div>');return}
+ const base=c.calc(v).val,items=[];
+ c.inputs.forEach(i=>{const out=[.8,1.2].map(f=>{const w=Object.assign({},v);w[i[0]]=v[i[0]]*f;if(c.check&&c.check(w))return NaN;try{return c.calc(w).val}catch(e){return NaN}}).filter(isFinite);if(out.length)items.push({k:i[0],l:i[1].replace(/\s*\(.*\)/,''),lo:Math.min.apply(null,out),hi:Math.max.apply(null,out)})});
+ items.sort((a,b)=>(b.hi-a.hi)+(a.lo-b.lo));
+ let curve='<div class="notice">Not enough valid points.</div>';
+ if(items.length){const k=items[0].k,ps=[];for(let m=.2;m<=2.001;m+=.1){const w=Object.assign({},v);w[k]=v[k]*m;if(c.check&&c.check(w))continue;try{const y=c.calc(w).val;if(isFinite(y))ps.push([w[k],y])}catch(e){}}
+  if(ps.length>2){const xs=ps.map(p=>p[0]),ys=ps.map(p=>p[1]),x0=Math.min.apply(null,xs),x1=Math.max.apply(null,xs),y1=Math.max.apply(null,ys)*1.1||1,y0=Math.min(0,Math.min.apply(null,ys));
+   curve=line([{pts:ps,color:C.b}],{x0:x0,x1:x1,y0:y0,y1:y1,xl:items[0].l,yl:c.unit,fx:v=>Number(v).toFixed(1),fy:v=>Number(v).toFixed(1),marks:[{x:v[k],y:base,c:C.g,l:'Now '+r2(base),tip:'Current: '+r2(base)+' '+c.unit}]})}}
+ $('fcCharts').innerHTML=
+  card('Input sensitivity','Result of “'+esc(c.name)+'” when each input moves ±20%',tornado(items,base,{good:'high',fmt:v=>r2(v)}),{tag:'Tornado'})+
+  card('Response curve','Result as the most influential input sweeps 0.2× → 2×',curve,{tag:'Live',tc:'g'})}
+
+const PAGES={home:pHome,overview:pOverview,analysis:pAnalysis,treatment:pTreatment,compare:pCompare,experiment:pExperiment,evidence:pEvidence,formula:pFormula};
+const BOX={home:'hxCharts',overview:'ovCharts',analysis:'anCharts',treatment:'trCharts',compare:'cpCharts',experiment:'exCharts',evidence:'evCharts',formula:'fcCharts'};
+function countUp(root){root.querySelectorAll('.cu').forEach(el=>{const to=+el.dataset.to,d=+el.dataset.dec||0,pre=el.dataset.pre||'',suf=el.dataset.suf||'';if(typeof requestAnimationFrame!=='function')return;const t0=performance.now();const step=t=>{const p=Math.min(1,(t-t0)/850),e=1-Math.pow(1-p,3);el.textContent=pre+(to*e).toFixed(d)+suf;if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)})}
+function renderPage(p,anim){const fn=PAGES[p];if(!fn)return;try{const s=['evidence','formula'].indexOf(p)>-1?null:S();fn(s,anim);const b=$(BOX[p]);if(b){b.classList.toggle('anim',!!anim);if(p==='home'){$('hxKpis').classList.toggle('anim',!!anim);if(anim)countUp($('hxKpis'))}}}catch(e){console.error('charts',p,e);const b=$(BOX[p]);if(b)b.innerHTML='<div class="card" style="grid-column:1/-1"><div class="notice">Charts could not be drawn for the current inputs. Check that all inputs are valid numbers.</div></div>'}}
+function active(){const a=document.querySelector('.page.active');return a?a.id.slice(5):'home'}
+
+/* ---------- mount containers ---------- */
+function head(t,sub,id,cls){return '<div class="sectionhead"><h2>'+t+'</h2><span>'+sub+'</span></div><div id="'+id+'" class="grid '+cls+'" style="margin-top:0"></div>'}
+function mount(){
+ const home=document.querySelector('#page-home .sectionhead');
+ home.insertAdjacentHTML('beforebegin','<div class="hx-head"><div><div class="eyebrow">Live engine output</div><h2>Decision dashboard at a glance</h2><p class="sub" id="hxSub"></p></div><div class="field hx-sel"><label>FEEDSTOCK</label><select id="hxFeed">'+$('feedstock').innerHTML+'</select></div></div><div id="hxKpis" class="grid g4"></div><div id="hxCharts" class="grid g3" style="margin-top:16px"></div>');
+ $('hxFeed').addEventListener('change',function(){$('feedstock').value=this.value;updateAll()});
+ const hero=document.querySelector('#page-home>.card:first-child .actions');
+ if(hero)hero.insertAdjacentHTML('beforebegin','<div class="chips"><span><b>5</b>treatment pathways</span><span><b>8</b>limiting compounds</span><span><b>5</b>cited papers</span><span><b>Live</b>decision sensitivity</span></div>');
+ document.querySelectorAll('#page-overview .sectionhead')[0].insertAdjacentHTML('beforebegin',head('Visual analytics','Score, sensitivity and trade-offs','ovCharts','g3').replace('<div class="sectionhead">','<div class="sectionhead" style="margin-top:6px">'));
+ document.querySelector('#page-analysis>.grid').insertAdjacentHTML('afterend',head('Visual diagnosis','Severity, concentration and evidence confidence','anCharts','g2'));
+ document.querySelector('#page-treatment>.grid').insertAdjacentHTML('afterend',head('Treatment analytics','Cost, removal, resources and mass balance','trCharts','g2'));
+ document.querySelector('#page-compare>.grid').insertAdjacentHTML('afterend',head('Economic analytics','Cost drivers, break-even and sensory shift','cpCharts','g2'));
+ $('page-experiment').insertAdjacentHTML('beforeend',head('Validation analytics','Prediction error, priorities and literature target','exCharts','g3'));
+ document.querySelector('#page-evidence .heading').insertAdjacentHTML('afterend',head('Evidence at a glance','Every chart is drawn from cited experimental values','evCharts','g3').replace('<div class="sectionhead">','<div class="sectionhead" style="margin-top:0">'));
+ $('page-formula').insertAdjacentHTML('beforeend',head('Calculation analytics','Sensitivity and response curve for the selected calculation','fcCharts','g2'));
+ ['evCharts'].forEach(i=>$(i).classList.add('g3x'));
+ const tip=document.createElement('div');tip.id='sc-tip';tip.setAttribute('role','tooltip');document.body.appendChild(tip);
+ document.addEventListener('touchstart',e=>{const t=e.target.closest?e.target.closest('[data-tip]'):null;if(t){const r=t.getBoundingClientRect();tip.textContent=t.getAttribute('data-tip');tip.style.display='block';tip.style.left=Math.max(6,Math.min(innerWidth-tip.offsetWidth-8,r.left))+'px';tip.style.top=(r.bottom+8)+'px';clearTimeout(window.__tt);window.__tt=setTimeout(()=>tip.style.display='none',2600)}else tip.style.display='none'},{passive:true});
+ document.addEventListener('mousemove',e=>{const t=e.target.closest?e.target.closest('[data-tip]'):null;if(t){tip.textContent=t.getAttribute('data-tip');tip.style.display='block';tip.style.left=Math.max(6,Math.min(innerWidth-tip.offsetWidth-8,e.clientX+14))+'px';tip.style.top=(e.clientY+16)+'px'}else tip.style.display='none'});
+}
+mount();
+
+/* ---------- wire into the app ---------- */
+const _u=window.updateAll;window.updateAll=function(){const r=_u.apply(this,arguments);renderPage(active(),false);return r};
+const _s=window.showPage;window.showPage=function(p){_s(p);renderPage(p,true)};
+const _pe=window.evPost;if(_pe)window.evPost=function(){_pe.apply(this,arguments);renderPage(active(),false)};
+const _fc=window.fcCalc;if(_fc)window.fcCalc=function(){_fc.apply(this,arguments);renderPage('formula',false)};
+renderPage('home',true);
+})();
+
+</script>
+</body>
+</html>
